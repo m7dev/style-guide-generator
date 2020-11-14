@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="files/styles.css">
+    <link rel="stylesheet" href="files/default.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="files/html2canvas.js"></script>
+</head>
+<body>
+
+    <button onclick="(contentDisplay('config-buttons'))" class="submit" id="configs">Open / Save Config file</button>
+    <button onclick="generateStyleGuide()" class="submit" id="generateGS">Generate Gtyle-Guide &lpar;"Enter"&rpar;</button>
+    <button onclick="generateSnapShot()" class="submit" id="generateSS" >Generate Snap-Shot &lpar;"end"&rpar;</button>
+    <button onclick="(contentDisplay('style-buttons'))" class="submit" id="styles" >Generate Styles</button>
+    <button onclick="(window.print())" class="submit" id="print">Print &lpar;"Ctrl + P"&rpar;</button>
+    <button onclick="(contentDisplay('help-text'))" class="submit" id="help">Help</button>
+        <div id="config-buttons" style="display: none;">
+            <button class="submit"><a href="" class="submit" onclick="generateJson()" id="json-save" download>Save config</a></button>
+            <input type="file" id="json-open" name="files[]" class="submit"/>
+            <button onclick="showJson()" class="submit" id="json" style="margin-left: -50px; background-color: #4c555d; padding: 6.5px;">Apply config</button>
+        </div>
+        <div id="style-buttons" style="display: none;">
+            <button class="submit"><a href="" class="submit" onclick="generateVariables()" id="variables-save" download>Generate and Save _variables.less</a></button>
+            <button class="submit"><a href="" class="submit" onclick="generateTypography()" id="typography-save" download>Generate and Save _typography.less</a></button>
+            <button class="submit"><a href="" class="submit" onclick="generateText()" id="text-save" download>Generate and Save as Text</a></button>
+        </div>
+        <div id="help-text" class="info" style="display: none; font-size: 16px; padding-bottom: 10px;">
+            <span>1. Fill in the form according to the customer's requirements or according to the existing customer's web-site and click "Generate Style-Guide" or the "Enter" key.</span><br>
+            <span>2. If you do not fill in the form completely, some values will be selected based on the data already entered. Just press "Enter" at any time.</span><br>
+            <span>3. After filling out the form, click "Generate Snap-Shot" and save the resulting image &lpar;this may take a few seconds&rpar;.</span><br>
+            <span>4. To Save &lpar;Open&rpar; the configuration of the entered data click "Open / Save Config file".</span><br>
+            <span>Note: You can use all Google Fonts and your System fonts only &lpar;for font-family options&rpar;.</span><br>
+            <!-- <span>Note: In custom css fields you can put additional css styles or any notes &lpar;please use this note format " /* note */ "&rpar;.</span><br> -->
+        </div>
+    <br>
+    <span class="info">Style Guide Form:</span>
+    <div id="style-guide" class="style-guide">
+        <section class="scale">
+            <div class="logo item">
+                <p> SG-100 LOGO</p>
+                <img id="logo" src="files/default_logo.png" alt=""/><br>
+                <input id="logo-btn" type="file" onchange="previewFile()"><br>
+            </div>
+            <div class="colors item">
+                <p> SG-101 PRIMARY ACCENT COLOR AND <br>
+                    SG-102  SECONDARY ACCENT COLOR<br>
+                    SG-103  ADDITIONAL ACCENT COLOR IF APPLICABLE
+                </p>
+                <div class="primary color">
+                    <div class="primary color-preview" id="primary-color-preview"></div>
+                    <p>PRIMARY COLOR: <br/><input id="primary-color" placeholder="#d3aa80" style="width: 100px;" type="text"></input></p>
+                </div><br>
+                <div class="secondary color">
+                    <div class="secondary color-preview" id="secondary-color-preview"></div>
+                    <p>SECONDARY COLOR: <br/><input id="secondary-color" placeholder="#faf5f0" style="width: 100px;" type="text"></input></p>
+                </div>
+                <div class="additional color">
+                    <div class="additional color-preview" id="additional-color-preview"></div>
+                    <p>ADDITIONAL COLOR: <br/><input id="additional-color" placeholder="#666666" style="width: 100px;" type="text"></input></p>
+                </div>
+            </div>
+            <div class="button item">
+                <p>SG-104 TEXT-BUTTONS</p>
+                <div id="button-preview" class="button-preview"><span>Add to cart</span></div><br/>
+                    <span>background-color:</span><input id="button-bg" placeholder="#d3aa80" type="text"></input><br>
+                    <span>padding:</span><input id="button-padding" placeholder="5px" type="text"></input><br>
+                    <span>color:</span><input id="button-color" placeholder="#fff" type="text"></input><br>
+                    <span>font-size:</span><input id="button-fs" placeholder="16px" type="text"></input><br>
+                    <span>font-weight:</span><input id="button-fw" placeholder="300" type="text"></input><br>
+                    <span>font-family:</span><input id="button-ff" placeholder='"Montserrat", Helvetica, sans-serif' type="text"></input><br>
+                    <span>border:</span><input id="button-border" placeholder="2px solid #666" type="text"></input><br>
+                    <span>border-radius:</span><input id="button-br" placeholder="unset" type="text"></input><br>
+                    <span>text-transform:</span><input id="button-tt" placeholder="unset" type="text"></input><br>
+                    <textarea class="custom-input" id="button-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                <span>Hover:</span><br>
+                <div id="button-preview-h" class="button-preview hover"><span>Add to cart</span></div><br/>
+                    <span>background-color:</span><input id="button-bg-h" placeholder="#666" type="text"></input><br>
+                    <span>color:</span><input id="button-color-h" placeholder="#fff" type="text"></input><br>
+                    <textarea class="custom-input" id="button-custom-h" placeholder="/* custom css */" type="text"></textarea><br>
+            </div>
+            <div class="social item">
+                <p>SG-105 SOCIAL ICONS</p>
+                <div id="social-preview" class="social-preview" bis_skin_checked="1">
+                    <a id="social-preview-i1" class="ic facebook" title="Facebook"><span class="fab fa-facebook"></span></a>
+                    <a id="social-preview-i2" class="ic youtube" title="Youtube"><span class="fab fa-youtube"></span></a>
+                    <a id="social-preview-i3" class="ic twitter" title="Twitter"><span class="fab fa-twitter"></span></a>
+                    <a id="social-preview-i4" class="ic instagram active" title="Instagram"><span class="fab fa-instagram"></span></a>
+                </div><br>
+                <span>parrent bg:</span><input id="social-bg-p" placeholder="#fff" type="text"></input><br>
+                <span>background-color:</span><input id="social-bg" placeholder="#666" type="text"></input><br>
+                <span>color:</span><input id="social-color" placeholder="#fff" type="text"></input><br>
+                <span>border:</span><input id="social-border" placeholder="0px solid #fff" type="text"></input><br>
+                <textarea class="custom-input" id="social-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                <span>Hover:</span><br>
+                <span>background-color:</span><input id="social-bg-h" placeholder="#d3aa80" type="text"></input><br>
+                <span>color:</span><input id="social-color-h" placeholder="#fff" type="text"></input><br>
+            </div>
+            <div class="banner item">
+                <p>SG-106 BANNER SIZE</p>
+                <span style="font-size: 16px; color: #6ab;">Banner Size <input style="font-size: 16px; color: #6ab;" id="banner-input" placeholder="D: 1660*500" type="text"></input></span><br>
+                <br>
+            </div>
+            <br><br><br>
+            <div class="mobmenu item">
+                <p>RESPONSIVE MENU</p>
+                <div class="mobmenu-preview" bis_skin_checked="1">
+                    <div id="mobmenu-prev-active">
+                        <span class="fas fa-bars"></span><br>
+                        <div id="mobmenu-prev-drop">
+                            <li id="mobmenu-el1">Shop by Brand</li>
+                            <li id="mobmenu-el2">Shop by condition</li>
+                            <li id="mobmenu-el3">Services</li>
+                            <li id="mobmenu-el4">Products</li>
+                        </div>
+                    </div>
+                    <div id="mobmenu-prev">
+                        <span class="fas fa-search"></span>
+                        <span class="far fa-user"></span>
+                        <span class="far fa-clone"><span id="mobmenu-prev-counter" class="counter">1</span></span>
+                        <span class="fas fa-shopping-cart"></span>
+                    </div>
+                </div>
+                <br>
+                <span>MENU:</span><br>
+                <span>background-color:</span><input id="mobmenu-bg" placeholder="#fff" type="text"></input><br>
+                <span>color:</span><input id="mobmenu-color" placeholder="#666" type="text"></input><br>
+                <span>counter bg:</span><input id="mobmenu-counter" placeholder="#666" type="text"></input><br>
+                <br>
+                <span>ACTIVE:</span><br>
+                <span>background-color:</span><input id="mobmenu-bg-a" placeholder="#d3aa80" type="text"></input><br>
+                <span>color:</span><input id="mobmenu-color-a" placeholder="#fff" type="text"></input><br>
+                <span>font-size:</span><input id="mobmenu-fs-a" placeholder="14px" type="text"></input><br>
+                <span>font-weight:</span><input id="mobmenu-fw-a" placeholder="400" type="text"></input><br>
+                <span>font-family:</span><input id="mobmenu-ff-a" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                <span>text-transform:</span><input id="mobmenu-tt-a" placeholder="uppecase" type="text"></input><br>
+                <textarea class="custom-input" id="mobmenu-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                <br>
+            </div>
+        </section>
+        <section class="scale">
+            <div class="heading item">
+                <p>HEADING STYLES FOR CMS PAGES</p>
+                <p>SG-106 h1 &nbsp;&nbsp;&nbsp;&nbsp; SG-108 h3 &nbsp;&nbsp;&nbsp;&nbsp; SG-110 h5<br>
+                   SG-107 h2 &nbsp;&nbsp;&nbsp;&nbsp; SG-109 h4
+                </p>
+                    <h1 id="h1-preview">&lt;h1&gt; Heading one generic title</h1>
+                        <span>color:</span><input id="h1-color" placeholder="#000" type="text"></input><br>
+                        <span>font-size:</span><input id="h1-fs" placeholder="32px" type="text"></input><br>
+                        <span>font-weight:</span><input id="h1-fw" placeholder="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h1-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h1-tt" placeholder="capitalize" type="text"></input><br>
+                        <textarea class="custom-input" id="h1-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                    <h2 id="h2-preview">&lt;h2&gt; Heading two generic title</h2>
+                        <span>color:</span><input id="h2-color" placeholder="#000" type="text"></input><br>
+                        <span>font-size:</span><input id="h2-fs" placeholder="30px" type="text"></input><br>
+                        <span>font-weight:</span><input id="h2-fw" placeholder="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h2-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h2-tt" placeholder="capitalize" type="text"></input><br>
+                        <textarea class="custom-input" id="h2-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                    <h3 id="h3-preview">&lt;h3&gt; Heading three title</h3>
+                        <span>color:</span><input id="h3-color" placeholder="#666" type="text"></input><br>
+                        <span>font-size:</span><input id="h3-fs" placeholder="26px" type="text"></input><br>
+                        <span>font-weight:</span><input id="h3-fw" placeholder="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h3-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h3-tt" placeholder="uppercase" type="text"></input><br>
+                        <textarea class="custom-input" id="h3-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                    <h4 id="h4-preview">&lt;h4&gt; Heading four title</h4>
+                        <span>color:</span><input id="h4-color" placeholder="#000" type="text"></input><br>
+                        <span>font-size:</span><input id="h4-fs" placeholder="20px" type="text"></input><br>
+                        <span>font-weight:</span><input id="h4-fw" placeholder="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h4-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h4-tt" placeholder="capitalize" type="text"></input><br>
+                        <textarea class="custom-input" id="h4-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                    <h5 id="h5-preview">&lt;h5&gt; Heading five</h5>
+                        <span>color:</span><input id="h5-color" placeholder="#000" type="text"></input><br>
+                        <span>font-size:</span><input id="h5-fs" placeholder="16px" type="text"></input><br>
+                        <span>font-weight:</span><input id="h5-fw" placeholder="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h5-ff" placeholder='"Montserrat", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h5-tt" placeholder="capitalize" type="text"></input><br>
+                        <textarea class="custom-input" id="h5-custom" placeholder="/* custom css */" type="text"></textarea><br>
+            </div>
+            <br><br>
+            <div class="paragraph item">
+                <p>SG-111 PARAGRAPH STYLES</p>
+                <p id="p-preview" class="p-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur mauris eu velit sollicitudin consectetur. Integer auctor porta sagittis. Nulla metus sem, faucibus ac urna ac, consequat condimentum nibh. Sed ornare in ex vel scelerisque. Fusce efficitur mi vel est ultrices, ac tempus purus congue.</p>
+                <span>color:</span><input id="p-color" placeholder="#000" type="text"></input><br>
+                <span>font-size:</span><input id="p-fs" placeholder="12px" type="text"></input><br>
+                <span>font-family:</span><input id="p-ff" placeholder='"Montserrat", Helvetica, sans-serif' type="text"></input><br>
+                <span>line-height:</span><input id="p-lh" placeholder="1.6" type="text"></input><br>
+                <textarea class="custom-input" id="p-custom" placeholder="/* custom css */" type="text"></textarea><br>
+            </div>
+            <div class="banners item">
+                <p>CART/CHECKOUT BANNERS</p>
+                <div id="banner1-preview" class="banner-preview scale" bis_skin_checked="1">
+                    <div id="banner1-h2">Get Free Shipping</div>
+                    <div id="banner1-h4">Purchase  $150 worth of products and we'll ship your order for free.</div>
+                </div><br>
+                    <span>background-color:</span><input id="banner1-bg" placeholder="#d3aa80" type="text"></input><br>
+                    <span>color:</span><input id="banner1-color" placeholder="#fff" type="text"></input><br>
+                    <span>title font-size:</span><input id="banner1-fs-h2" placeholder="22px" type="text"></input><br>
+                    <span>description font-size:</span><input id="banner1-fs-h4" placeholder="14px" type="text"></input><br>
+                    <span>font-family:</span><input id="banner1-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                    <span>text-transform:</span><input id="banner1-tt" placeholder="uppercase" type="text"></input><br>
+                    <textarea class="custom-input" id="banner1-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                <div id="banner2-preview" class="banner-preview scale" bis_skin_checked="1">
+                    <div id="banner2-h2">Trying to use a Coupon Code, receive a Membership discount <br>or earn Reward Points?</div>
+                    <div id="banner2-h4">Remember to <span id="banner-link">login to your account</span>. Please contact our office for assistance.</div>
+                </div><br>
+                    <span>background-color:</span><input id="banner2-bg" placeholder="#666" type="text"></input><br>
+                    <span>color:</span><input id="banner2-color" placeholder="#fff" type="text"></input><br>
+                    <span>title font-size:</span><input id="banner2-fs-h2" placeholder="22px" type="text"></input><br>
+                    <span>description font-size:</span><input id="banner2-fs-h4" placeholder="14px" type="text"></input><br>
+                    <span>font-family:</span><input id="banner2-ff" placeholder='"Open Sans", Helvetica, sans-serif'  type="text"></input><br>
+                    <span>text-transform:</span><input id="banner2-tt" placeholder="uppercase" type="text"></input><br>
+                    <textarea class="custom-input" id="banner2-custom" placeholder="/* custom css */" type="text"></textarea><br>
+            </div>
+        </section>
+        <section class="scale">
+            <div class="links item">
+                <p>SG-112 TEXT-LINK STYLES (REGULAR AND HOVER)</p>
+                <p id="link-p-preview" class="p-preview">Lorem ipsum <span id="link-preview">text link</span>, and <span id="link-preview-h">link hover</span> dolor sit amet</p>
+                <span>color:</span><input id="link-color" placeholder="#d3aa80" type="text"></input><br>
+                <span>font-weight:</span><input id="link-fw" placeholder="unset" type="text"></input><br>
+                <span>text-decoration:</span><input id="link-td" placeholder="unset" type="text"></input><br>
+                <textarea class="custom-input" id="link-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                <span>Hover:</span><br>
+                <span>color:</span><input id="link-color-h" placeholder="#d3ba50;" type="text"></input><br>
+                <textarea class="custom-input" id="link-custom-h" placeholder="/* custom css */" type="text"></textarea><br>
+            </div>
+            <div class="catpromo item">
+                <p>SG-113 CATEGORY PROMO</p>
+                <div id="catpromo-preview" class="promo-preview category"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur mauris eu velit sollicitudin consectetur.</span></div><br/>
+                <p class="promo-class">p class ="categoryPromo"</p>
+                <span>padding:</span><input id="catpromo-padding" placeholder="10px" type="text"></input><br>
+                <span>background-color:</span><input id="catpromo-bg" placeholder="#f5f5f5" type="text"></input><br>
+                <span>color:</span><input id="catpromo-color" placeholder="#d3aa80" type="text"></input><br>
+                <span>font-size:</span><input id="catpromo-fs" placeholder="18px" type="text"></input><br>
+                <span>font-weight:</span><input id="catpromo-fw" placeholder="700" type="text"></input><br>
+                <span>font-family:</span><input id="catpromo-ff" placeholder='"Montserrat", Helvetica, sans-serif' type="text"></input><br>
+                <textarea class="custom-input" id="catpromo-custom" placeholder="/* custom css */" type="text"></textarea><br>
+            </div>
+            <div class="skupromo item">
+                <p>SG-114 SKU PROMO</p>
+                <div id="skupromo-preview" class="promo-preview sku"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur mauris eu velit sollicitudin consectetur. Integer auctor porta sagittis.</span></div><br/>
+                <p class="promo-class">p class ="skuPromo"</p>
+                <span>padding:</span><input id="skupromo-padding" placeholder="10px" type="text"></input><br>
+                <span>background-color:</span><input id="skupromo-bg" placeholder="#f5f5f5" type="text"></input><br>
+                <span>color:</span><input id="skupromo-color" placeholder="#d3aa80" type="text"></input><br>
+                <span>font-size:</span><input id="skupromo-fs" placeholder="16px" type="text"></input><br>
+                <span>font-weight:</span><input id="skupromo-fw" placeholder="400" type="text"></input><br>
+                <span>font-family:</span><input id="skupromo-ff" placeholder='"Montserrat", Helvetica, sans-serif' type="text"></input><br>
+                <textarea class="custom-input" id="skupromo-custom" placeholder="/* custom css */" type="text"></textarea><br>
+            </div>
+            <div class="badge item">
+                <p>SG-115 SALE BADGE</p>
+                <div id="badge-preview" class="badge-preview" bis_skin_checked="1"><span>SALE</span></div><br>
+                <span>background-color:</span><input id="badge-bg" placeholder="#d3aa80" type="text"></input><br>
+                <span>color:</span><input id="badge-color" placeholder="#fff" type="text"></input><br>
+                <textarea class="custom-input" id="badge-custom" placeholder="/* custom css */" type="text"></textarea><br>
+            </div>
+            <div class="tagline item">
+                <p>SG-116 TAG LINE</p>
+                <div id="tagline-preview" class="tagline-preview" bis_skin_checked="1"><span>Tag line text</span></div><br>
+                <span>background-color:</span><input id="tagline-bg" placeholder="#666" type="text"></input><br>
+                <span>color:</span><input id="tagline-color" placeholder="#fff" type="text"></input><br>
+                <span>font-size:</span><input id="tagline-fs" placeholder="32px" type="text"></input><br>
+                <span>font-weight:</span><input id="tagline-fw" placeholder="400" type="text"></input><br>
+                <span>font-family:</span><input id="tagline-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                <textarea class="custom-input" id="tagline-custom" placeholder="/* custom css */" type="text"></textarea><br>
+            </div>
+            <div class="menu item">
+                <p>SG-117 MAIN MENU & SUBMENU</p>
+                <div id="menu-prev" class="menu-preview" bis_skin_checked="1">
+                    <div id="nav1-prev" class="nav">Shop by brand</div>
+                    <div id="nav2-prev"class="nav">Shop by condition</div>
+                    <div id="nav3-prev" class="nav active">Services
+                        <div id="sub-prev" class="sub">
+                            <div id="sub1-prev" class="sub-nav">Acne Treatments</div>
+                            <div id="sub2-prev" class="sub-nav active">Body Contouring</div>
+                            <div id="sub3-prev" class="sub-nav">Eye Treatments</div>
+                            <div id="sub4-prev" class="sub-nav">Facial Sculpting</div>
+                        </div>
+                    </div>
+                </div>
+                <span>MENU:</span><br>
+                <span>parrent bg-color:</span><input id="menu-bg" placeholder="#fff" type="text"></input><br>
+                <textarea class="custom-input" id="menu-custom-p" placeholder="/* parrent custom css" type="text"></textarea><br>
+                <span>color:</span><input id="menu-color" placeholder="#666" type="text"></input><br>
+                <span>font-size:</span><input id="menu-fs" placeholder="16px" type="text"></input><br>
+                <span>font-weight:</span><input id="menu-fw" placeholder="400" type="text"></input><br>
+                <span>font-family:</span><input id="menu-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                <span>text-transform:</span><input id="menu-tt" placeholder="uppecase" type="text"></input><br>
+                <textarea class="custom-input" id="menu-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                <span>Hover:</span><br>
+                <span>background-color:</span><input id="menu-bg-h" placeholder="transparent" type="text"></input><br>
+                <span>color:</span><input id="menu-color-h" placeholder="#666" type="text"></input><br>
+                <span>text-decoration:</span><input id="menu-td-h" placeholder="unset" type="text"></input><br>
+                <textarea class="custom-input" id="menu-custom-h" placeholder="/* custom css */" type="text"></textarea><br>
+                <br>
+                <span>SUB-MENU:</span><br>
+                <span>background-color:</span><input id="submenu-bg" placeholder="#fff" type="text"></input><br>
+                <textarea class="custom-input" id="submenu-custom-p" placeholder="/* parrent custom css" type="text"></textarea><br>
+                <span>color:</span><input id="submenu-color" placeholder="#666" type="text"></input><br>
+                <span>font-size:</span><input id="submenu-fs" placeholder="14px" type="text"></input><br>
+                <span>font-weight:</span><input id="submenu-fw" placeholder="500" type="text"></input><br>
+                <span>font-family:</span><input id="submenu-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                <span>text-transform:</span><input id="submenu-tt" placeholder="capitalize" type="text"></input><br>
+                <textarea class="custom-input" id="submenu-custom" placeholder="/* custom css */" type="text"></textarea><br>
+                <span>Hover:</span><br>
+                <span>background-color:</span><input id="submenu-bg-h" placeholder="#d3aa80" type="text"></input><br>
+                <span>color:</span><input id="submenu-color-h" placeholder="#666" type="text"></input><br>
+                <span>text-decoration:</span><input id="submenu-td-h" placeholder="unset" type="text"></input><br>
+                <textarea class="custom-input" id="submenu-custom-h" placeholder="/* custom css */" type="text"></textarea><br>
+                
+            </div>
+        </section>
+    </div>
+
+    <br>
+    <div id="canvas" src="#canvas" alt="">
+        <span id="message" class="info" style="display: none;">Here your Generated Image&lpar;s&rpar;:</span>
+    </div>
+    <br>
+    <script src="files/script.js"></script>
+    <script src="files/_variables.js"></script>
+    <script src="files/_typography.js"></script>
+    <script src="files/_text.js"></script>
+</body>
+</html>

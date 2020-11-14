@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Work+Sans:300,400,500,600,700&display=swap');
+
+/* @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css'); */
+
+.style-guide {
+  font-family: Arial, Verdana, Tahoma, sans-serif;
+  font-size: 13px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 1900px;
+  margin: 5px;
+
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  border: 1px solid #d0d0d0;
+}
+.scale { transform: scale(0.95); min-width: 460px; }
+
+.color { display: inline-block; min-width: 180px; }
+.color-preview { width: 60px; height: 60px; }
+
+p { font-size: 13px; margin: 10px 0; }
+.logo img { max-height: 100px; }
+#logo-btn { color: #fff; }
+section > .item { padding: 10px 10px 0 70px; position: relative; }
+section > .item::before { position: absolute; left: 50px; top: 20px; }
+.item.font-family::before { content: "0."; }
+.item.logo::before { content: "1."; }
+.item.colors::before { content: "2."; }
+.item.button::before { content: "3."; }
+.button-preview { max-width: 150px; min-height: 20px; text-align: center; }
+.item.social::before { content: "4."; }
+.social-preview { max-width: 140px; padding: 4px; }
+.item.banner::before { content: "5."; }
+
+.mobmenu-preview { position: relative; }
+
+#mobmenu-prev > span,
+#mobmenu-prev-active > span { padding: 13px 23px 12px 21px; font-size: 14px; }
+#mobmenu-prev-active { max-width: 293px; margin: 0 !important; padding: 0 !important; }
+#mobmenu-prev { position: absolute; top: 0; left: 50px; }
+#mobmenu-prev .fa-clone { position: relative; }
+
+#mobmenu-prev .counter {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  padding: 3px 7px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 9px;
+  line-height: 12px;
+  background-color: #666;
+}
+#mobmenu-prev-drop { list-style: none; }
+#mobmenu-prev-drop > li { padding: 8px; position: relative; }
+#mobmenu-prev-drop > li::after { content: "+"; top: 6px; position: absolute; right: 10px; }
+
+.item.heading::before { content: "5."; }
+.item.paragraph::before { content: "6."; }
+.banner-preview { text-align: center; }
+.banner-preview * { letter-spacing: -1px; font-family: "Work Sans", sans-serif; }
+#banner1-preview { margin-left: -80px; width: 750px; min-height: 70px; padding: 15px; }
+#banner2-preview { margin-left: -80px; width: 750px; min-height: 70px; padding: 15px; }
+#banner1-h2 { padding: 10px; }
+.item.links::before { content: "7."; }
+.item.catpromo::before { content: "8."; }
+.item.skupromo::before { content: "9."; }
+.item.badge::before { content: "10."; }
+.item.tagline::before { content: "11."; }
+.tagline-preview { padding-right: 20px; text-align: right; max-width: 500px; }
+.item.menu::before { content: "12."; }
+.menu-preview { margin: 10px 0; height: 40px; vertical-align: middle; width: 580px; }
+.menu-preview > .nav { display: inline-block; margin: 6px; padding: 5px; }
+.menu-preview > .nav::after { content: "⌄"; top: -4px; position: relative; right: -2px; }
+.menu-preview > .nav.active { position: relative; }
+.menu-preview .sub { position: absolute; left: 0; top: 35px; min-width: 180px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); list-style: none; }
+.menu-preview .sub-nav { position: relative; }
+.menu-preview .sub-nav::after { content: "›"; top: 4px; position: absolute; right: 3px; }
+
+input,
+textarea {
+  border: 0;
+  background-color: #fafafa;
+  width: 240px;
+  max-width: 400px;
+}
+textarea { height: 16px; }
+textarea::placeholder { color: #dfdfdf; }
+
+textarea::-webkit-resizer {
+  background-color: transparent;
+  border-right: 2px dashed #bbb;
+  border-bottom: 2px dashed #bbb;
+}
+
+select { border: 0; }
+
+/* Buttons */
+.submit {
+  margin: 10px 20px 10px 10px;
+  background-color: #6c757d;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+
+.info {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #6c757d;
+  margin-left: 10px;
+}
+
+@media print {
+  body > button,
+  body > link { display: none; }
+  .style-guide { width: auto; flex-wrap: wrap; }
+  .style-guide * { font-size: 21px; }
+  textarea::placeholder { color: #fff; }
+  .info { display: none; }
+}
