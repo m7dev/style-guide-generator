@@ -1,4 +1,4 @@
-var colors, buttons, socials, mobMenu, h, p, banners, link, catPromo, skuPromo, badge, tagLine, menu, subMenu;
+var colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu;
 var config, json;
 
 var inputs = {
@@ -9,6 +9,7 @@ var inputs = {
     h: ["h1-color", "h2-color", "h3-color", "h4-color", "h5-color", "h1-fs", "h2-fs", "h3-fs", "h4-fs", "h5-fs", "h1-fw", "h2-fw", "h3-fw", "h4-fw", "h5-fw", "h1-ff", "h2-ff", "h3-ff", "h4-ff", "h5-ff", "h1-tt", "h2-tt", "h3-tt", "h4-tt", "h5-tt", "h1-custom", "h2-custom", "h3-custom", "h4-custom", "h5-custom"],
     p: ["p-color", "p-fs", "p-ff", "p-lh", "p-custom"], 
     banners: ["banner1-bg", "banner1-color", "banner1-fs-h2", "banner1-fs-h4", "banner1-ff", "banner1-tt", "banner1-custom", "banner2-bg", "banner2-color", "banner2-fs-h2", "banner2-fs-h4", "banner2-ff", "banner2-tt", "banner2-custom"],
+    tabs: ["tabs-bg", "tabs-color", "tabs-bg-h", "tabs-color-h"],
     link: ["link-color", "link-fw", "link-td", "link-custom", "link-color-h", "link-custom-h"],
     catPromo: ["catpromo-padding", "catpromo-bg", "catpromo-color", "catpromo-fs", "catpromo-fw", "catpromo-ff", "catpromo-custom"],
     skuPromo: ["skupromo-padding", "skupromo-bg", "skupromo-color", "skupromo-fs", "skupromo-fw", "skupromo-ff", "skupromo-custom"], 
@@ -64,7 +65,7 @@ function setProperties(id, padding, bgColor, color, fsize, fweight, ffamily, bor
     document.getElementById(id).style.cssText = newCssText;
 }
 
-function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, link, catPromo, skuPromo, badge, tagLine, menu, subMenu) {
+function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu) {
     //SET COLORS
     document.getElementById("primary-color-preview").style.backgroundColor = colors.primary;
     document.getElementById("secondary-color-preview").style.backgroundColor = colors.secondary;
@@ -78,7 +79,7 @@ function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, link
     socials.id.forEach(element => {
         setProperties (element, "", socials.bg, socials.color, "", "", "", socials.border, "", "", "", "", socials.custom);
     });
-    setProperties (socials.id[3], "", socials.bgh, socials.colorh, "", "", "", "", "", "", "", "", "");
+    setProperties (socials.id[3], "", socials.bgh, socials.colorh, "", "", "", "", "", "", "", "", socials.custom);
 
 
     setProperties (mobMenu.id[0], "", mobMenu.bg, mobMenu.color, "", "", "", "", "", "", "", "", "");
@@ -124,6 +125,10 @@ function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, link
     setProperties (banners.id[3], "", banners.bg2, banners.color2, "", "", "", "", "", "", "", "", "");
     setProperties (banners.id[4], "", "", "", banners.fs2h2, "", banners.ff2, "", "", "", banners.tt2, "", banners.custom2);
     setProperties (banners.id[5], "", "", "", banners.fs2h4, "", banners.ff2, "", "", "", banners.tt2, "", banners.custom2);    
+
+    setProperties (tabs.id[0], "", tabs.bg, tabs.color, "", "", banners.ff1, "", "", "", "", "", "");
+    setProperties (tabs.id[1], "", tabs.bgh, tabs.colorh, "", "", banners.ff1, "", "", "", "", "", "");
+    setProperties (tabs.id[2], "", tabs.bg, tabs.color, "", "", banners.ff1, "", "", "", "", "", "");
 }
 
 function getFonts (fonts) {
@@ -169,7 +174,7 @@ document.getElementById('json-open').addEventListener('change', handleFileSelect
 
 //SHOW JSON
 function showJson() {
-    var colors = json.colors, buttons = json.buttons, socials = json.socials, mobMenu = json.mobMenu, h = json.h, p = json.p, banners = json.banners, link = json.link, catPromo = json.catPromo, skuPromo = json.skuPromo, badge = json.badge, tagLine = json.tagLine, menu = json.menu, subMenu = json.subMenu;
+    var colors = json.colors, buttons = json.buttons, socials = json.socials, mobMenu = json.mobMenu, h = json.h, p = json.p, banners = json.banners, tabs = json.tabs, link = json.link, catPromo = json.catPromo, skuPromo = json.skuPromo, badge = json.badge, tagLine = json.tagLine, menu = json.menu, subMenu = json.subMenu;
 
     function setValues(id, values) {
         for (let i = 0; i < id.length; i++) {
@@ -181,7 +186,7 @@ function showJson() {
     var fonts = [buttons.ff, mobMenu.ffa, h.ff.e1, h.ff.e2, h.ff.e3, h.ff.e4, h.ff.e5, p.ff, banners.ff1, banners.ff2, catPromo.ff, skuPromo.ff, tagLine.ff, menu.ff, subMenu.ff];
     getFonts(fonts);
 
-    setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, link, catPromo, skuPromo, badge, tagLine, menu, subMenu);
+    setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu);
     setValues(inputs.colors, [colors.primary, colors.secondary, colors.additional]);
     setValues(inputs.buttons, [buttons.padding, buttons.bg, buttons.color, buttons.fs, buttons.fw, buttons.ff, buttons.border, buttons.br, buttons.tt, buttons.custom, buttons.bgh, buttons.colorh, buttons.customh]);
     setValues(inputs.socials, [socials.parrentbg, socials.bg, socials.color, socials.id[0], socials.id[1], socials.id[2], socials.id[3], socials.border, socials.custom, socials.bgh, socials.colorh]);
@@ -189,6 +194,7 @@ function showJson() {
     setValues(inputs.h, [h.color.e1, h.color.e2, h.color.e3, h.color.e4, h.color.e5, h.fs.e1, h.fs.e2, h.fs.e3, h.fs.e4, h.fs.e5, h.fw.e1, h.fw.e2, h.fw.e3, h.fw.e4, h.fw.e5, h.ff.e1, h.ff.e2, h.ff.e3, h.ff.e4, h.ff.e5, h.tt.e1, h.tt.e2, h.tt.e3, h.tt.e4, h.tt.e5, h.custom.e1, h.custom.e2, h.custom.e3, h.custom.e4, h.custom.e5]);
     setValues(inputs.p, [p.color, p.fs, p.ff, p.lh, p.custom]);
     setValues(inputs.banners, [banners.bg1, banners.color1, banners.fs1h2, banners.fs1h4, banners.ff1, banners.tt1, banners.custom1, banners.bg2, banners.color2, banners.fs2h2, banners.fs2h4, banners.ff2, banners.tt2, banners.custom2]);
+    setValues(inputs.tabs, [tabs.bg, tabs.color, tabs.bgh, tabs.colorh]);
     setValues(inputs.link, [link.color, link.fw, link.td, link.custom, link.colorh, link.customh]);
     setValues(inputs.catPromo, [catPromo.padding, catPromo.bg, catPromo.color, catPromo.fs, catPromo.fw, catPromo.ff, catPromo.custom]);
     setValues(inputs.skuPromo, [skuPromo.padding, skuPromo.bg, skuPromo.color, skuPromo.fs, skuPromo.fw, skuPromo.ff, skuPromo.custom]);
@@ -197,7 +203,7 @@ function showJson() {
     setValues(inputs.menu, [menu.bg, menu.customp, menu.color, menu.fs, menu.fw, menu.ff, menu.tt, menu.custom, menu.bgh, menu.colorh, menu.tdh, menu.customh]);
     setValues(inputs.subMenu, [subMenu.bg, subMenu.customp, subMenu.color, subMenu.fs, subMenu.fw, subMenu.ff, subMenu.tt, subMenu.custom, subMenu.bgh, subMenu.colorh, subMenu.tdh, subMenu.customh]);
 
-    config = {colors, buttons, socials, mobMenu, h, p, banners, link, catPromo, skuPromo, badge, tagLine, menu, subMenu};
+    config = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu};
 }
 
 //GENERATE STYLE GUIDE
@@ -279,9 +285,16 @@ function generateStyleGuide() {
         color2: getElValue("banner2-color"),
         fs2h2: getElValue("banner2-fs-h2"),
         fs2h4: getElValue("banner2-fs-h4"),
-        ff2: getElValue("banner1-ff"),  
+        ff2: getElValue("banner2-ff"),  
         tt2: getElValue("banner2-tt"),   
         custom2: getElValue("banner2-custom")     
+    }
+    tabs = {
+        id: ["tab1", "tab2", "tab3"],
+        bg: getElValue("tabs-bg", "color3"),
+        color: getElValue("tabs-color"),
+        bgh: getElValue("tabs-bg-h", "color1"),
+        colorh: getElValue("tabs-color-h")
     }
     link = {
         id: ["link-preview","link-preview-h"],
@@ -362,8 +375,8 @@ function generateStyleGuide() {
     var fonts = [buttons.ff, mobMenu.ffa, h.ff.e1, h.ff.e2, h.ff.e3, h.ff.e4, h.ff.e5, p.ff, banners.ff1, banners.ff2, catPromo.ff, skuPromo.ff, tagLine.ff, menu.ff, subMenu.ff];
     getFonts(fonts);
 
-    setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, link, catPromo, skuPromo, badge, tagLine, menu, subMenu);
-    config = {colors, buttons, socials, mobMenu, h, p, banners, link, catPromo, skuPromo, badge, tagLine, menu, subMenu};
+    setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu);
+    config = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu};
 }
 
 //SET LOGO

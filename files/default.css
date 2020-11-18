@@ -52,7 +52,10 @@ h5 { margin: 0 0 0 -30px; font-size: 16px; font-weight: 500; font-family: "Open 
 #banner1-h2, #banner2-h2 { margin-left: 0; font-size: 22px; text-transform: uppercase; }
 #banner1-h4, #banner2-h4 { margin-left: 0; font-size: 14px; text-transform: uppercase; }
 
-#link-preview, #banner-link { color: #d3aa80; }
+.tabs .tab1, .tabs .tab3 { margin-left: -5px; padding: 10px 12px; background-color: #d3aa80; color: #fff; font-size: 18px; } 
+.tabs .tab2 { margin-left: -5px; padding: 10px 12px; background-color: #666; color: #fff; font-size: 18px; } 
+
+#link-preview { color: #d3aa80; }
 #link-preview-h { color: #d3ba50; }
 
 .promo-class { font-size: 16px; }

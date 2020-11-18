@@ -210,7 +210,7 @@ ${config.banners.custom2}
 
 `;
 //SAVE LESS
-  download(styles, '_text.txt', 'text');
+  download(text, 'styles_in_text.txt', 'text');
   function download(text, name, type) {
     var a = document.getElementById("text-save");
     var file = new Blob([text], {type: type});
