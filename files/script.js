@@ -100,7 +100,7 @@ function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs
 
     setProperties (link.id[0], "", "", link.color, "", link.fw, "", "", "", "", "", link.td, link.custom);
     setProperties (link.id[1], "", "", link.colorh, "", link.fw, "", "", "", "", "", link.td, link.customh);
-    setProperties ("banner-link", "", "", link.color, "", link.fw, "", "", "", "", "", link.td, link.custom);
+    setProperties ("banner-link", "", "", "", "", link.fw, "", "", "", "", "", "", link.custom);
 
     setProperties (catPromo.id, catPromo.padding, catPromo.bg, catPromo.color, catPromo.fs, catPromo.fw, catPromo.ff, "", "", "", "", "", catPromo.custom);
     setProperties (skuPromo.id, skuPromo.padding, skuPromo.bg, skuPromo.color, skuPromo.fs, skuPromo.fw, skuPromo.ff, "", "", "", "", "", skuPromo.custom);
