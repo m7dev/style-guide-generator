@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Work+Sans:300,400,500,600,700&display=swap');
 
+@font-face {
+  font-family: "Glyphter";
+  src: url(./Glyphter.ttf) format("truetype");
+}
+
 /* @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css'); */
 
 .style-guide {
@@ -36,10 +41,13 @@ section > .item::before { position: absolute; left: 50px; top: 20px; }
 .mobmenu-preview { position: relative; }
 
 #mobmenu-prev > span,
-#mobmenu-prev-active > span { padding: 13px 23px 12px 21px; font-size: 14px; }
+#mobmenu-prev-active > span { padding: 12px 20px 12px 22px; font-size: 14px; }
 #mobmenu-prev-active { max-width: 293px; margin: 0 !important; padding: 0 !important; }
-#mobmenu-prev { position: absolute; top: 0; left: 50px; }
-#mobmenu-prev .fa-clone { position: relative; }
+#mobmenu-prev { position: absolute; top: 0; left: 54px; }
+#mobmenu-prev .compare { position: relative; }
+#mobmenu-prev-active .icon, #mobmenu-prev .icon { font-family: "Glyphter"; font-size: 15px; line-height: 40px;}
+#mobmenu-prev-active .icon, #mobmenu-prev .icon.account { font-weight: bold;}
+#mobmenu-prev-active .icon {font-size: 13px;}
 
 #mobmenu-prev .counter {
   position: absolute;

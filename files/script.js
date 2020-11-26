@@ -291,7 +291,7 @@ function generateStyleGuide() {
     }
     tabs = {
         id: ["tab1", "tab2", "tab3"],
-        bg: getElValue("tabs-bg", "color3"),
+        bg: getElValue("tabs-bg", "color2"),
         color: getElValue("tabs-color"),
         bgh: getElValue("tabs-bg-h", "color1"),
         colorh: getElValue("tabs-color-h")
