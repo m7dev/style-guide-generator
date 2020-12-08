@@ -79,7 +79,7 @@ function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs
     socials.id.forEach(element => {
         setProperties (element, "", socials.bg, socials.color, "", "", "", socials.border, "", "", "", "", socials.custom);
     });
-    setProperties (socials.id[3], "", socials.bgh, socials.colorh, "", "", "", "", "", "", "", "", socials.custom);
+    setProperties (socials.id[3], "", socials.bgh, socials.colorh, "", "", "", socials.border, "", "", "", "", socials.custom);
 
 
     setProperties (mobMenu.id[0], "", mobMenu.bg, mobMenu.color, "", "", "", "", "", "", "", "", "");

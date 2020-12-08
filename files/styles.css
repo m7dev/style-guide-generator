@@ -35,7 +35,7 @@ section > .item::before { position: absolute; left: 50px; top: 20px; }
 .item.button::before { content: "3."; }
 .button-preview { max-width: 150px; min-height: 20px; text-align: center; }
 .item.social::before { content: "4."; }
-.social-preview { max-width: 140px; padding: 4px; }
+.social-preview { max-width: 150px; padding: 4px; }
 .item.banner::before { content: "5."; }
 
 .mobmenu-preview { position: relative; }
