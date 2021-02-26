@@ -19,6 +19,184 @@ var inputs = {
     subMenu: ["submenu-bg", "submenu-custom-p", "submenu-color", "submenu-fs", "submenu-fw", "submenu-ff", "submenu-tt", "submenu-custom", "submenu-bg-h", "submenu-color-h", "submenu-td-h", "submenu-custom-h"]
 }
 
+initialConfig = { 
+    colors: {
+        primary: "#d3aa80", 
+        secondary: "#faf5f0", 
+        additional: "#666"
+    },
+    buttons: {
+        id: ["button-preview", "button-preview-h"],
+        padding: "5px", 
+        bg: "#d3aa80", 
+        color: "#fff", 
+        fs: "16px", 
+        fw: "300",
+        ff: 'Montserrat", Helvetica, sans-serif',
+        border: "0px solid #fff",
+        br: "unset",
+        tt: "unset",
+        custom: "",
+        bgh: "#666",
+        colorh: "#fff",
+        customh: ""
+    },
+    socials: {
+        parrentid: "social-preview",
+        parrentbg: "#fff",
+        id: ["social-preview-i1", "social-preview-i2", "social-preview-i3", "social-preview-i4"],
+        bg: "#666", 
+        color: "#fff",
+        border: "0px solid #fff",
+        custom: "",
+        bgh: "#ddd", 
+        colorh: "#fff"
+    },
+    mobMenu: {
+        id: ["mobmenu-prev", "mobmenu-prev-counter", "mobmenu-prev-active"],
+        eids: ["mobmenu-el1", "mobmenu-el2", "mobmenu-el3", "mobmenu-el4"],
+        bg: "#fff", 
+        color: "#666", 
+        counterbg: "#666", 
+        bga: "#ddd", 
+        colora: "#fff",
+        fsa: "14px",
+        fwa: "400",
+        ffa: '"Open Sans", sans-serif',
+        tta: "uppercase",
+        custom: ""
+    },
+    h: {
+        id: ["h1-preview", "h2-preview", "h3-preview", "h4-preview", "h5-preview"],
+        color: { e1:"#000", e2:"#000", e3:"#666", e4:"#000", e5:"#000" },
+        fs: { e1:"32px", e2:"30px", e3:"26px", e4:"20px", e5:"16px" },
+        fw: { e1:"500", e2:"500", e3:"500", e4:"500", e5:"500" },
+        ff: { e1:'"Open Sans", Helvetica, sans-serif', e2:'"Open Sans", Helvetica, sans-serif', e3:'"Open Sans", Helvetica, sans-serif', e4:'"Open Sans", Helvetica, sans-serif', e5:'"Open Sans", Helvetica, sans-serif' },
+        tt: { e1:"capitalize", e2:"capitalize", e3:"uppercase", e4:"capitalize", e5:"capitalize" },
+        custom: { e1:"", e2:"", e3:"", e4:"", e5:"" }
+    },
+    p: {
+        id: ["p-preview", "link-p-preview"],
+        color: "#000",
+        fs: "12px",
+        ff: 'Montserrat", Helvetica, sans-serif',
+        lh: "1.6",
+        custom: ""
+    },
+    banners: {
+        id: ["banner1-preview", "banner1-h2", "banner1-h4", "banner2-preview", "banner2-h2", "banner2-h4"],
+        bg1: "#ddd",
+        color1: "#fff",
+        fs1h2: "22px",
+        fs1h4: "14px",   
+        ff1: '"Open Sans", Helvetica, sans-serif', 
+        tt1: "uppercase",
+        custom1: "",  
+        bg2: "#666",
+        color2: "#fff",
+        fs2h2: "22px",
+        fs2h4: "14px",
+        ff2: '"Open Sans", Helvetica, sans-serif',  
+        tt2: "uppercase",   
+        custom2: ""    
+    },
+    tabs: {
+        id: ["tab1", "tab2", "tab3"],
+        bg: "#d3aa80",
+        color: "#fff",
+        bgh: "#333",
+        colorh: "#fff"
+    },
+    link: {
+        id: ["link-preview","link-preview-h"],
+        color: getElValue("link-color", "color1"),
+        fw: getElValue("link-fw"),
+        td: getElValue("link-td"),
+        custom: getElValue("link-custom"),
+        colorh: getElValue("link-color-h", "color2"),
+        customh: getElValue("link-custom-h")
+    },
+    catPromo: {
+        id: "catpromo-preview",
+        padding: "10px",
+        bg: "#f5f5f5",
+        color: "#ddd",
+        fs: "18px",
+        fw: "700",
+        ff: 'Montserrat", Helvetica, sans-serif',
+        custom: ""
+    },
+    skuPromo: {
+        id: "skupromo-preview",
+        padding: "10px",
+        bg: "#f5f5f5",
+        color: "#ddd",
+        fs: "16px",
+        fw: "500",
+        ff: 'Montserrat", Helvetica, sans-serif',
+        custom: ""
+    },
+    badge: {
+        id: "badge-preview",
+        bg: "#d3aa80",
+        color: "#fff",
+        custom: ""
+    },
+    tagLine: {
+        id: "tagline-preview",
+        bg: "#ddd",
+        color: "#fff",
+        fs: "32px",
+        fw: "400",
+        ff: '"Open Sans", Helvetica, sans-serif',
+        custom: ""
+    },
+    menu: {
+        id: ["menu-prev", "nav1-prev", "nav2-prev", "nav3-prev"],
+        bg: "#fff",
+        customp: "",
+        color: "#666",
+        fs: "16px",
+        fw: "400",
+        ff: '"Open Sans", Helvetica, sans-serif',
+        tt: "uppercase",
+        custom: "",
+        bgh: "transparent",
+        colorh: "#ddd",
+        tdh: "unset",
+        customh: ""
+    },
+    subMenu: {
+        id: ["sub-prev", "sub1-prev", "sub2-prev", "sub3-prev", "sub4-prev"],
+        bg: "#fff",
+        customp: "",
+        color: "#666",
+        fs: "14px",
+        fw: "500",
+        ff: '"Open Sans", Helvetica, sans-serif',
+        tt: "capitalize",
+        custom: "",
+        bgh: "#ddd",
+        colorh: "#666",
+        tdh: "unset",
+        customh: ""
+    },
+    listStyle: {
+        type: "disc"
+    },
+    bannerSize: {
+        selected: "1500 * 730"
+    },
+    productName: {
+        color: "#666",
+        tt: "uppercase",
+        fs: "18px",
+        fw: "400"
+    }
+}
+
+console.log(initialConfig);
+
 function getElValue(id, def) {
     value = document.getElementById(id).value;
     if (value == "" && def == "color1" && document.getElementById("primary-color").value !== "") {
@@ -41,13 +219,20 @@ function getElValue(id, def) {
         document.getElementById(id).setAttribute("placeholder", value);
         return value;
     }
-    else {
+    else if (value !== "") {
         return value;
+    }
+    else {
+        return
     }
 }
 
 function setProperties(id, padding, bgColor, color, fsize, fweight, ffamily, border, bradius, lineh, tt, td, custom) {
-    font = ffamily.split (',');
+    if (ffamily !== undefined) {
+        font = ffamily.split (',');
+    } else {
+        font = ""
+    }
     font = font[0];
     var newCssText = 
     "padding:" + padding + ";" +
@@ -137,7 +322,7 @@ function getFonts (fonts) {
     }
     fonts = arrayUnique(fonts);
     var filtered = fonts.filter(function (el) {
-        return el != "";
+        return el !== "" && el !== undefined;
     });
     for (let i = 0; i < filtered.length; i++) {
         font = filtered[i].split(',');
@@ -370,13 +555,81 @@ function generateStyleGuide() {
         tdh: getElValue("submenu-td-h"),
         customh: getElValue("submenu-custom-h")
     }
+    listStyle = {
+        type: getElValue("list-style")
+    }
+    bannerSize = {
+        selected: getElValue("banner-size")
+    }
+    productName = {
+        color: getElValue("additional-color"),
+        tt: "uppercase",
+        fs: "18px",
+        fw: "400"
+    }
 
     //SET FONTS
     var fonts = [buttons.ff, mobMenu.ffa, h.ff.e1, h.ff.e2, h.ff.e3, h.ff.e4, h.ff.e5, p.ff, banners.ff1, banners.ff2, catPromo.ff, skuPromo.ff, tagLine.ff, menu.ff, subMenu.ff];
     getFonts(fonts);
 
     setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu);
-    config = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu};
+    let newConfig = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, listStyle, bannerSize, productName};
+    Object.keys({...initialConfig.colors,...newConfig.colors}).map(key=>{
+        colors[key]=newConfig.colors[key]||initialConfig.colors[key]
+    })
+    Object.keys({...initialConfig.buttons,...newConfig.buttons}).map(key=>{
+        buttons[key]=newConfig.buttons[key]||initialConfig.buttons[key]
+    })
+    Object.keys({...initialConfig.socials,...newConfig.socials}).map(key=>{
+        socials[key]=newConfig.socials[key]||initialConfig.socials[key]
+    })
+    Object.keys({...initialConfig.mobMenu,...newConfig.mobMenu}).map(key=>{
+        mobMenu[key]=newConfig.mobMenu[key]||initialConfig.mobMenu[key]
+    })
+    Object.keys({...initialConfig.h,...newConfig.h}).map(key=>{
+        h[key]=newConfig.h[key]||initialConfig.h[key]
+    })
+    Object.keys({...initialConfig.p,...newConfig.p}).map(key=>{
+        p[key]=newConfig.p[key]||initialConfig.p[key]
+    })
+    Object.keys({...initialConfig.banners,...newConfig.banners}).map(key=>{
+        banners[key]=newConfig.banners[key]||initialConfig.banners[key]
+    })
+    Object.keys({...initialConfig.tabs,...newConfig.tabs}).map(key=>{
+        tabs[key]=newConfig.tabs[key]||initialConfig.tabs[key]
+    })
+    Object.keys({...initialConfig.link,...newConfig.link}).map(key=>{
+        link[key]=newConfig.link[key]||initialConfig.link[key]
+    })
+    Object.keys({...initialConfig.catPromo,...newConfig.catPromo}).map(key=>{
+        catPromo[key]=newConfig.catPromo[key]||initialConfig.catPromo[key]
+    })
+    Object.keys({...initialConfig.skuPromo,...newConfig.skuPromo}).map(key=>{
+        skuPromo[key]=newConfig.skuPromo[key]||initialConfig.skuPromo[key]
+    })
+    Object.keys({...initialConfig.badge,...newConfig.badge}).map(key=>{
+        badge[key]=newConfig.badge[key]||initialConfig.badge[key]
+    })
+    Object.keys({...initialConfig.tagline,...newConfig.tagline}).map(key=>{
+        tagline[key]=newConfig.tagline[key]||initialConfig.tagline[key]
+    })
+    Object.keys({...initialConfig.menu,...newConfig.menu}).map(key=>{
+        menu[key]=newConfig.menu[key]||initialConfig.menu[key]
+    })
+    Object.keys({...initialConfig.subMenu,...newConfig.subMenu}).map(key=>{
+        subMenu[key]=newConfig.subMenu[key]||initialConfig.subMenu[key]
+    })
+    Object.keys({...initialConfig.listStyle,...newConfig.listStyle}).map(key=>{
+        listStyle[key]=newConfig.listStyle[key]||initialConfig.listStyle[key]
+    })
+    Object.keys({...initialConfig.bannerSize,...newConfig.bannerSize}).map(key=>{
+        bannerSize[key]=newConfig.bannerSize[key]||initialConfig.bannerSize[key]
+    })
+    Object.keys({...initialConfig.productName,...newConfig.productName}).map(key=>{
+        productName[key]=newConfig.productName[key]||initialConfig.productName[key]
+    })
+
+    config = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, listStyle, bannerSize, productName};
 }
 
 //SET LOGO

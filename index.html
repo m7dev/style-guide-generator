@@ -68,7 +68,7 @@
                 <p>SG-104 TEXT-BUTTONS</p>
                 <div id="button-preview" class="button-preview"><span>Add to cart</span></div><br/>
                     <span>background-color:</span><input id="button-bg" placeholder="#d3aa80" type="text"></input><br>
-                    <span>padding:</span><input id="button-padding" placeholder="5px" type="text"></input><br>
+                    <span class="hiden">padding &lpar;not required&rpar;:</span><input class="hiden" id="button-padding" placeholder="5px" type="text"></input><br>
                     <span>color:</span><input id="button-color" placeholder="#fff" type="text"></input><br>
                     <span>font-size:</span><input id="button-fs" placeholder="16px" type="text"></input><br>
                     <span>font-weight:</span><input id="button-fw" placeholder="300" type="text"></input><br>
@@ -102,7 +102,11 @@
             </div>
             <div class="banner item">
                 <p>SG-106 BANNER SIZE</p>
-                <span style="font-size: 16px; color: #6ab;">Banner Size <input style="font-size: 16px; color: #6ab;" id="banner-input" placeholder="D: 1660*500" type="text"></input></span><br>
+                <span style="font-size: 16px; color: #6ab;">
+                    Banner Size 
+                    <input id="banner-size" style="font-size: 16px; color: #6ab;" id="banner-input" value="C: 1500 * 730 / D: 1660 * 500" type="text"></input>
+                </span>
+                <br>
                 <br>
             </div>
             <br><br>
@@ -142,7 +146,7 @@
                 <input style="font-size: 14px; color: #000;" type="text"></input><br>
             </div>
             <div class="list item">
-                <p>LIST STYLES: <input style="font-size: 16px; color: #000;" id="list-input" placeholder="like live website" type="text"></input>
+                <p>LIST STYLES: <input id="list-style" style="font-size: 16px; color: #000;" id="list-input" placeholder="like live website" type="text"></input>
                 </p>
             </div>
             <div class="product item">
@@ -164,42 +168,42 @@
                     <h1 id="h1-preview">&lt;h1&gt; Heading one generic title</h1>
                         <span>color:</span><input id="h1-color" placeholder="#000" type="text"></input><br>
                         <span>font-size:</span><input id="h1-fs" placeholder="32px" type="text"></input><br>
-                        <span>font-weight:</span><input id="h1-fw" placeholder="500" type="text"></input><br>
-                        <span>font-family:</span><input id="h1-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
-                        <span>text-transform:</span><input id="h1-tt" placeholder="capitalize" type="text"></input><br>
-                        <span>line-height:</span><input id="h1-lh" placeholder="1.2" type="text"></input><br>
+                        <span>font-weight:</span><input id="h1-fw" value="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h1-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h1-tt" value="capitalize" type="text"></input><br>
+                        <span>line-height:</span><input id="h1-lh" value="1.2" type="text"></input><br>
                         <textarea class="custom-input" id="h1-custom" placeholder="/* custom css */" type="text"></textarea><br>
                     <h2 id="h2-preview">&lt;h2&gt; Heading two generic title</h2>
                         <span>color:</span><input id="h2-color" placeholder="#000" type="text"></input><br>
                         <span>font-size:</span><input id="h2-fs" placeholder="30px" type="text"></input><br>
-                        <span>font-weight:</span><input id="h2-fw" placeholder="500" type="text"></input><br>
-                        <span>font-family:</span><input id="h2-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
-                        <span>text-transform:</span><input id="h2-tt" placeholder="capitalize" type="text"></input><br>
-                        <span>line-height:</span><input id="h2-lh" placeholder="1.2" type="text"></input><br>
+                        <span>font-weight:</span><input id="h2-fw" value="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h2-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h2-tt" value="capitalize" type="text"></input><br>
+                        <span>line-height:</span><input id="h2-lh" value="1.2" type="text"></input><br>
                         <textarea class="custom-input" id="h2-custom" placeholder="/* custom css */" type="text"></textarea><br>
                     <h3 id="h3-preview">&lt;h3&gt; Heading three title</h3>
                         <span>color:</span><input id="h3-color" placeholder="#666" type="text"></input><br>
                         <span>font-size:</span><input id="h3-fs" placeholder="26px" type="text"></input><br>
-                        <span>font-weight:</span><input id="h3-fw" placeholder="500" type="text"></input><br>
-                        <span>font-family:</span><input id="h3-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
-                        <span>text-transform:</span><input id="h3-tt" placeholder="uppercase" type="text"></input><br>
-                        <span>line-height:</span><input id="h3-lh" placeholder="1.2" type="text"></input><br>
+                        <span>font-weight:</span><input id="h3-fw" value="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h3-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h3-tt" value="uppercase" type="text"></input><br>
+                        <span>line-height:</span><input id="h3-lh" value="1.2" type="text"></input><br>
                         <textarea class="custom-input" id="h3-custom" placeholder="/* custom css */" type="text"></textarea><br>
                     <h4 id="h4-preview">&lt;h4&gt; Heading four title</h4>
                         <span>color:</span><input id="h4-color" placeholder="#000" type="text"></input><br>
                         <span>font-size:</span><input id="h4-fs" placeholder="20px" type="text"></input><br>
-                        <span>font-weight:</span><input id="h4-fw" placeholder="500" type="text"></input><br>
-                        <span>font-family:</span><input id="h4-ff" placeholder='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
-                        <span>text-transform:</span><input id="h4-tt" placeholder="capitalize" type="text"></input><br>
-                        <span>line-height:</span><input id="h4-lh" placeholder="1.2" type="text"></input><br>
+                        <span>font-weight:</span><input id="h4-fw" value="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h4-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h4-tt" value="capitalize" type="text"></input><br>
+                        <span>line-height:</span><input id="h4-lh" value="1.2" type="text"></input><br>
                         <textarea class="custom-input" id="h4-custom" placeholder="/* custom css */" type="text"></textarea><br>
                     <h5 id="h5-preview">&lt;h5&gt; Heading five</h5>
                         <span>color:</span><input id="h5-color" placeholder="#000" type="text"></input><br>
                         <span>font-size:</span><input id="h5-fs" placeholder="16px" type="text"></input><br>
-                        <span>font-weight:</span><input id="h5-fw" placeholder="500" type="text"></input><br>
-                        <span>font-family:</span><input id="h5-ff" placeholder='"Montserrat", Helvetica, sans-serif' type="text"></input><br>
-                        <span>text-transform:</span><input id="h5-tt" placeholder="capitalize" type="text"></input><br>
-                        <span>line-height:</span><input id="h5-lh" placeholder="1.2" type="text"></input><br>
+                        <span>font-weight:</span><input id="h5-fw" value="500" type="text"></input><br>
+                        <span>font-family:</span><input id="h5-ff" value='"Montserrat", Helvetica, sans-serif' type="text"></input><br>
+                        <span>text-transform:</span><input id="h5-tt" value="capitalize" type="text"></input><br>
+                        <span>line-height:</span><input id="h5-lh" value="1.2" type="text"></input><br>
                         <textarea class="custom-input" id="h5-custom" placeholder="/* custom css */" type="text"></textarea><br>
             </div>
             <br><br>
@@ -319,7 +323,7 @@
                     </div>
                 </div>
                 <input style="font-size: 14px; color: #000;" value="MENU:" type="text"></input><br>
-                <span>parrent bg-color:</span><input id="menu-bg" placeholder="#fff" type="text"></input><br>
+                <span>parrent bg-color &lpar;not required&rpar;:</span><input id="menu-bg" placeholder="#fff" type="text"></input><br>
                 <textarea class="custom-input" id="menu-custom-p" placeholder="/* parrent custom css" type="text"></textarea><br>
                 <span>color:</span><input id="menu-color" placeholder="#666" type="text"></input><br>
                 <span>font-size:</span><input id="menu-fs" placeholder="16px" type="text"></input><br>

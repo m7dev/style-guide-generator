@@ -24,6 +24,8 @@
 .color { display: inline-block; min-width: 180px; }
 .color-preview { width: 60px; height: 60px; }
 
+.hiden, .hiden::placeholder { color: transparent; }
+
 p { font-size: 13px; margin: 10px 0; }
 .logo img { max-height: 100px; }
 #logo-btn { color: #fff; }
