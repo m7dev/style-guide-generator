@@ -188,6 +188,7 @@ initialConfig = {
         selected: "1500 * 730"
     },
     productName: {
+        default: true,
         color: "#666",
         tt: "uppercase",
         fs: "18px",
@@ -562,6 +563,7 @@ function generateStyleGuide() {
         selected: getElValue("banner-size")
     }
     productName = {
+        default: true,
         color: getElValue("additional-color"),
         tt: "uppercase",
         fs: "18px",
@@ -652,7 +654,7 @@ function previewFile() {
 //SAVE JSON
 function generateJson() {
     config = JSON.stringify(config);
-    download(config, 'config.json', 'application/json');
+    download(config, 'style-guide-config.json', 'application/json');
 }
 function download(text, name, type) {
     var a = document.getElementById("json-save");
