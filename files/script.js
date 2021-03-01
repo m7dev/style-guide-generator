@@ -110,11 +110,11 @@ initialConfig = {
     link: {
         id: ["link-preview","link-preview-h"],
         color: getElValue("link-color", "color1"),
-        fw: getElValue("link-fw"),
-        td: getElValue("link-td"),
-        custom: getElValue("link-custom"),
+        fw: "300",
+        td: "unset",
+        custom:"",
         colorh: getElValue("link-color-h", "color2"),
-        customh: getElValue("link-custom-h")
+        customh: ""
     },
     catPromo: {
         id: "catpromo-preview",
