@@ -185,7 +185,7 @@ initialConfig = {
         type: "disc"
     },
     bannerSize: {
-        selected: "1500 * 730"
+        selected: "D: 1660 * 500"
     },
     productName: {
         default: true,
