@@ -32,7 +32,7 @@ initialConfig = {
         color: "#fff", 
         fs: "16px", 
         fw: "300",
-        ff: 'Montserrat", Helvetica, sans-serif',
+        ff: '"Open Sans", Helvetica, sans-serif',
         border: "0px solid #fff",
         br: "unset",
         tt: "unset",
@@ -70,7 +70,7 @@ initialConfig = {
         id: ["h1-preview", "h2-preview", "h3-preview", "h4-preview", "h5-preview"],
         color: { e1:"#000", e2:"#000", e3:"#666", e4:"#000", e5:"#000" },
         fs: { e1:"32px", e2:"30px", e3:"26px", e4:"20px", e5:"16px" },
-        fw: { e1:"500", e2:"500", e3:"500", e4:"500", e5:"500" },
+        fw: { e1:"400", e2:"400", e3:"400", e4:"400", e5:"400" },
         ff: { e1:'"Open Sans", Helvetica, sans-serif', e2:'"Open Sans", Helvetica, sans-serif', e3:'"Open Sans", Helvetica, sans-serif', e4:'"Open Sans", Helvetica, sans-serif', e5:'"Open Sans", Helvetica, sans-serif' },
         tt: { e1:"capitalize", e2:"capitalize", e3:"uppercase", e4:"capitalize", e5:"capitalize" },
         custom: { e1:"", e2:"", e3:"", e4:"", e5:"" }
@@ -78,8 +78,8 @@ initialConfig = {
     p: {
         id: ["p-preview", "link-p-preview"],
         color: "#000",
-        fs: "12px",
-        ff: 'Montserrat", Helvetica, sans-serif',
+        fs: "16px",
+        ff: '"Open Sans", Helvetica, sans-serif',
         lh: "1.6",
         custom: ""
     },
@@ -123,7 +123,7 @@ initialConfig = {
         color: "#ddd",
         fs: "18px",
         fw: "700",
-        ff: 'Montserrat", Helvetica, sans-serif',
+        ff: '"Open Sans", Helvetica, sans-serif',
         custom: ""
     },
     skuPromo: {
@@ -133,7 +133,7 @@ initialConfig = {
         color: "#ddd",
         fs: "16px",
         fw: "500",
-        ff: 'Montserrat", Helvetica, sans-serif',
+        ff: '"Open Sans", Helvetica, sans-serif',
         custom: ""
     },
     badge: {
@@ -172,7 +172,7 @@ initialConfig = {
         customp: "",
         color: "#666",
         fs: "14px",
-        fw: "500",
+        fw: "400",
         ff: '"Open Sans", Helvetica, sans-serif',
         tt: "capitalize",
         custom: "",

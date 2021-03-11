@@ -9,7 +9,7 @@
   background-color: #d3aa80;
   color: #fff;
   font-size: 16px;
-  font-family: "Montserrat", serif;
+  font-family: "Open Sans", serif;
   border: 0px solid #666;
 }
 
@@ -29,7 +29,7 @@
 .social-preview a span { padding: 8px; }
 .social-preview #social-preview-i4 { background-color: #d3aa80; }
 
-#mobmenu-prev-active { background-color: #d3aa80; color: #fff; text-transform: uppercase; font-size: 14px; }
+#mobmenu-prev-active { background-color: #d3aa80; color: #fff; text-transform: uppercase; font-size: 14px; font-family: "Open Sans", sans-serif;}
 #mobmenu-prev { background-color: #fafafa; color: #666; }
 
 h1 { margin: 0 0 0 -50px; font-size: 32px; font-weight: 500; font-family: "Open Sans", sans-serif; color: #000; text-transform: capitalize; }
@@ -42,13 +42,13 @@ h5 { margin: 0 0 0 -30px; font-size: 16px; font-weight: 500; font-family: "Open 
   margin: 0 0 5px -15px;
   color: #666;
   max-width: 500px;
-  font-size: 12px;
-  font-family: "Montserrat", serif;
+  font-size: 16px;
+  font-family: "Open Sans", serif;
   line-height: 1.6;
 }
 
-#banner1-preview { background-color: #d3aa80; color: #fff; }
-#banner2-preview { background-color: #666; color: #fff; }
+#banner1-preview { line-height: 22px; background-color: #d3aa80; color: #fff; font-family: "Open Sans", serif; }
+#banner2-preview { line-height: 22px; background-color: #666; color: #fff; font-family: "Open Sans", serif; }
 #banner1-h2, #banner2-h2 { margin-left: 0; font-size: 22px; text-transform: uppercase; }
 #banner1-h4, #banner2-h4 { margin-left: 0; font-size: 14px; text-transform: uppercase; }
 #banner-link { text-decoration: underline; }
@@ -73,7 +73,7 @@ h5 { margin: 0 0 0 -30px; font-size: 16px; font-weight: 500; font-family: "Open 
   color: #d3aa80;
   font-size: 18px;
   font-weight: 700;
-  font-family: "Montserrat", serif;
+  font-family: "Open Sans", serif;
 }
 
 .promo-preview.sku {
