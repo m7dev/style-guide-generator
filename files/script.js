@@ -448,6 +448,7 @@ function generateStyleGuide() {
         fw: { e1:getElValue("h1-fw"), e2:getElValue("h2-fw"), e3:getElValue("h3-fw"), e4:getElValue("h4-fw"), e5:getElValue("h5-fw") },
         ff: { e1:getElValue("h1-ff"), e2:getElValue("h2-ff"), e3:getElValue("h3-ff"), e4:getElValue("h4-ff"), e5:getElValue("h5-ff") },
         tt: { e1:getElValue("h1-tt"), e2:getElValue("h2-tt"), e3:getElValue("h3-tt"), e4:getElValue("h4-tt"), e5:getElValue("h5-tt") },
+        lh: { e1:getElValue("h1-lh"), e2:getElValue("h2-lh"), e3:getElValue("h3-lh"), e4:getElValue("h4-lh"), e5:getElValue("h5-lh") },
         custom: { e1:getElValue("h1-custom"), e2:getElValue("h2-custom"), e3:getElValue("h3-custom"), e4:getElValue("h4-custom"), e5:getElValue("h5-custom") }
     }
     p = {
@@ -557,11 +558,11 @@ function generateStyleGuide() {
         customh: getElValue("submenu-custom-h")
     }
     listStyle = {
-        type: getElValue("list-style")
+        type: getElValue("list-input")
     }
-    bannerSize = {
-        selected: getElValue("banner-size")
-    }
+    // bannerSize = {
+    //     selected: getElValue("banner-input")
+    // }
     productName = {
         default: true,
         color: getElValue("additional-color"),

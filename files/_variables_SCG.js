@@ -1,4 +1,4 @@
-function generateVariables() {
+function generateVariablesSCG() {
   //FONTS-----------------------------
   var fonts = [config.buttons.ff, config.h.ff.e1, config.h.ff.e2, config.h.ff.e3, config.h.ff.e4, config.h.ff.e5, config.p.ff, config.catPromo.ff, config.skuPromo.ff, config.tagLine.ff, config.menu.ff, config.subMenu.ff];
   function arrayUnique(arr){
@@ -80,6 +80,7 @@ ${newFonts[2]}
 
 // Base Font Family theme
 @custom-headings-font-family:  ${config.h.ff.e1};
+@custom-headings2-font-family: ${config.h.ff.e2};
 @custom-primary-font-family:   ${config.p.ff};
 @custom-secondry-font-family:  ${config.buttons.ff};
 
@@ -105,7 +106,7 @@ ${newFonts[2]}
 @button-text-transform: ${config.buttons.tt};
 @button-font-weight: ${config.buttons.fw};
 @button-font-family: @custom-secondry-font-family;
-@button-border-radius: ${config.buttons.br};
+@button-border-radius: ${config.buttons.br || 0};
 @button-border: ${config.buttons.border};
 @button-border-hover: ${config.buttons.border};
 @button-font-size: ${config.buttons.fs};
@@ -114,74 +115,98 @@ ${newFonts[2]}
 @main-button-font-size: @button-font-size + 2px;
 
 //Header Custom Colors
-@header-custom-txt-color: @custom-color-3;
+@header-custom-txt-color: @custom-additional-color;
 @header-custom-link-color: @custom-link-color;
 @header-custom-link-bg: transparent;
 @header-custom-link-color-hover: @custom-link-color-hover;
 @header-custom-link-bg-hover: transparent;
-@header-primary-container-bg: @custom-color-1;
-@header-top-container-bg: @custom-color-1;
+@header-primary-container-bg: #fff;
+@header-top-container-bg: #fff;
 
 //Header border
 @header-border-width: 0;
-@header-border-color: #fff;
+@header-border-color: @custom-secondry-color;
 
 //Counter
 @counter-bg-color: ${config.mobMenu.counterbg};
-@counter-txt-color: @custom-color-1;
+@counter-txt-color: #fff;
+//Account Main Menu
+@menu-link-color: @custom-primary-color;
+@menu-link-bg: transparent;
+@menu-link-color-hover: @custom-secondry-color;
+@menu-link-bg-hover: transparent;
 
 //List Style Types
 @custom-list-style-type: circle;
+//Sticky header
+@sticky-header-txt-color: @custom-additional-color;
 
 //Menu Tabs
 @menu-bg-color: ${config.menu.bg};
 @menu-txt-color: ${config.menu.color};
+@menu-item-border: 1px solid transparent;
 @menu-bg-color-hover: ${config.menu.bgh};
 @menu-txt-color-hover: ${config.menu.colorh};
+@menu-item-decoration-hover: unset;
+@menu-item-border-hover: 1px solid transparent;
 @menu-bg-color-active: ${config.menu.bgh};
 @menu-txt-color-active: ${config.menu.colorh};
+@menu-item-border-active: 1px solid transparent;
 @menu-text-transform: ${config.menu.tt};
 @menu-font-size: ${config.menu.fs};
 @menu-font-weight: ${config.menu.fw};
 @custom-menu-font: Verdana, sans-serif;
 @menu-letter-spacing: normal;
-@menu-item-border: 0px solid transparent;
-@menu-item-border-hover: 0px solid transparent;
+// Dropdown item mask hover
+@dropdown-item-mask-hover: #f4e2d4ec;
 
 //Dropdown Sub-Menu
 @dropdown-menu-bg: ${config.subMenu.bg};
 @dropdown-menu-color: ${config.subMenu.color};
+@dropdown-menu-border-bottom: 0px solid transparent;
 @dropdown-menu-color-hover: ${config.subMenu.colorh};
 @dropdown-menu-bg-hover: ${config.subMenu.bgh};
+@dropdown-menu-bg-hover-opacity: 0.5;
 @dropdown-item-active-color: ${config.subMenu.color};
 @dropdown-item-active-bg: ${config.subMenu.bgh};
 @dropdown-menu-text-transform: ${config.subMenu.tt};
+@dropdown-menu-font: @custom-secondry-font-family;
 @dropdown-menu-font-weight: ${config.subMenu.fw};
 @dropdown-menu-font-size: ${config.subMenu.fs};
 @dropdown-menu-letter-spacing: normal;
-@dropdown-item-border: 0px solid @custom-color-1;
-@dropdown-item-border-hover: 0px solid @custom-color-1;
-@dropdown-item-border-top: 0px solid @custom-color-1;
+@dropdown-item-border: 0px solid @custom-primary-color;
+@dropdown-item-border-hover: 0px solid @custom-primary-color;
+@dropdown-item-border-top: 0px solid transparent;
+//SKU & Category Promos
+@sku-promo-background-color: ${config.skuPromo.bg};
+@sku-promo-txt-color: ${config.skuPromo.color};
+@sku-promo-font-family: ${config.skuPromo.ff};
+@sku-promo-font-size: ${config.skuPromo.fz};
+@sku-promo-font-weight: ${config.skuPromo.fw};
+@sku-category-background-color: ${config.catPromo.bg};
+@sku-category-txt-color: ${config.catPromo.color};
+@sku-category-font-family: ${config.catPromo.ff};
+@sku-category-font-size: ${config.catPromo.fz};
+@sku-category-font-weight: ${config.catPromo.fw};
 
 //Interface icons /category view toolbar icons, pagination/
 @custom-icon-bg-color: @custom-primary-color;
-@cusom-icon-color: @custom-color-1;
-@custom-icon-bg-color-hover: @custom-secondry-color;
-@cusom-icon-color-hover: @custom-color-1;
+@cusom-icon-color:#fff;
+@custom-icon-bg-color-hover:@custom-secondry-color;
+@cusom-icon-color-hover:#fff;
 @cusom-icon-active-bg-color:@custom-secondry-color;
-@cusom-icon-active-color: @custom-color-1;
+@cusom-icon-active-color:#fff;
 @custom-pagination-active-bg-color: @custom-secondry-color;
-@custom-pagination-active-txt-color: @custom-color-1;
+@custom-pagination-active-txt-color: #fff;
+//need to implement
+@custom-icon-border: 1px solid @custom-primary-color;
+@custom-icon-border-hover: 1px solid @custom-primary-color;
 
 //'Add to' Links
 @add-link-bg-color: @custom-primary-color;
-@add-link-icon-color:@custom-color-1;
+@add-link-icon-color: #fff;
 @add-link-bg-color-hover: @custom-secondry-color;
-@add-link-icon-color-hover: @custom-color-1;
-@add-link-label-color: @custom-primary-color;
-@add-link-label-color-hover: @custom-secondry-color;
-@add-link-border: 0px solid @custom-primary-color;
-@add-link-border-hover: 0px solid @custom-primary-color;
+@add-link-icon-color-hover: #fff;
 
 //Card price
 @custom-price-color: @custom-primary-color;
@@ -194,12 +219,12 @@ ${newFonts[2]}
 //Iconbox(icon with class 'ib')
 //TODO: need to test
 @iconbox-bg-color: @custom-primary-color;
-@iconbox-icon-color: @custom-color-1;
+@iconbox-icon-color:#fff;
 @iconbox-bg-color-hover:@custom-secondry-color;
-@iconbox-icon-color-hover: @custom-color-1;
-@iconbox-border-radius: 50%;
-@iconbox-border: 0 solid @custom-primary-color;
-@iconbox-border-hover: 0 solid @custom-primary-color;
+@iconbox-icon-color-hover:@button-primary-txt-color-hover;
+//need to implement
+@custom-icon-border: 1px solid @custom-primary-color;
+@custom-icon-border-hover: 1px solid @custom-primary-color;
 
 //Social Icons
 @social-icon-bg-color: ${config.socials.bg};
@@ -209,8 +234,66 @@ ${newFonts[2]}
 @social-icon-radius: 50%;
 @social-icon-border: ${config.socials.border};
 
-//Banners
-@caption-bg-color: '';
+//Promobanners on checkout
+@promo-shipping-bg: ${config.banners.bg1};
+@promo-shipping-color: ${config.banners.color1};
+@promo-shipping-title-font-size: ${config.banners.fs1h2};
+@promo-shipping-desc-font-size: ${config.banners.fs1h4};
+@promo-shipping-text-transform: ${config.banners.tt1};
+@promo-shipping-font-family: ${config.banners.ff1};
+@promo-login-bg: ${config.banners.bg2};
+@promo-login-color: ${config.banners.color2};
+@promo-login-title-font-size: ${config.banners.fs2h2};
+@promo-login-desc-font-size: ${config.banners.fs2h4};
+@promo-login-text-transform: ${config.banners.tt2};
+@promo-login-font-family: ${config.banners.ff2};
+
+//Headings
+//H1
+@heading-h1-color: ${config.h.color.e1};
+@heading-h1-font-size: ${config.h.fs.e1};
+@heading-h1-font-weight: ${config.h.fw.e1};
+@heading-h1-font-family: ${config.h.ff.e1};
+@heading-h1-text-transform: ${config.h.tt.e1};
+@heading-h1-line-height: 1.8;
+
+//H2
+@heading-h2-color: ${config.h.color.e2};
+@heading-h2-font-size: ${config.h.fs.e2};
+@heading-h2-font-weight: ${config.h.fw.e2};
+@heading-h2-font-family: ${config.h.ff.e2};
+@heading-h2-text-transform: ${config.h.tt.e2};
+@heading-h2-line-height: 1.8;
+
+//H3
+@heading-h3-color: ${config.h.color.e3};
+@heading-h3-font-size: ${config.h.fs.e3};
+@heading-h3-font-weight: ${config.h.fw.e3};
+@heading-h3-font-family: ${config.h.ff.e3};
+@heading-h3-text-transform: ${config.h.tt.e3};
+@heading-h3-line-height: 1.8;
+
+//H4
+@heading-h4-color: ${config.h.color.e4};
+@heading-h4-font-size: ${config.h.fs.e4};
+@heading-h4-font-weight: ${config.h.fw.e4};
+@heading-h4-font-family: ${config.h.ff.e4};
+@heading-h4-text-transform: ${config.h.tt.e4};
+@heading-h4-line-height: 1.8;
+
+//H5
+@heading-h5-color: ${config.h.color.e5};
+@heading-h5-font-size: ${config.h.fs.e5};
+@heading-h5-font-weight: ${config.h.fw.e5};
+@heading-h5-font-family: ${config.h.ff.e5};
+@heading-h5-text-transform: ${config.h.tt.e5};
+@heading-h5-line-height: 1.8;
+
+//Paragraphs
+@paragraph-color: ${config.p.color};
+@paragraph-font-size: ${config.p.fs};
+@paragraph-font-family: ${config.p.ff};
+@paragraph-line-height: ${config.p.lh};
 
 //Horizontal Links
 //links inside an 'ul' with 'links' class
@@ -226,20 +309,17 @@ ${newFonts[2]}
 @label-custom-bg-color: ${config.badge.bg};
 @label-custom-txt-color: ${config.badge.color};
 
-//Product page tabs
-@product-tab-bg-color: @custom-secondry-color;
-@product-tab-txt-color: @custom-color-1;
-@product-tab-bg-color-active: @custom-primary-color;
-@product-tab-txt-color-active: @custom-color-1;
-@produc-tab-border: 0 solid @custom-primary-color;
-
 //Mini-Cart
 @cart-bg-color: #fff;
-@cart-txt-color: @custom-additional-color;
-@cart-link-color: @custom-link-color;
-@cart-link-color-hover: @custom-link-color-hover;
+@cart-txt-color: @custom-tertiary-color;
+@cart-link-color: @custom-additional-color;
+@cart-link-color-hover: @custom-primary-color;
 @cart-border-width: 0px;
 @cart-border-color: @custom-primary-color;
+// Mobile mini-cart
+@mobile-minicart-bg: #fff;
+//Mobile Header Welcome
+@mobile-welcome-text: @mobile-menu-txt-color;
 
 //Mobile Menu Tabs
 @mobile-menu-bg-color: ${config.mobMenu.bg};
@@ -248,7 +328,6 @@ ${newFonts[2]}
 @mobile-menu-txt-color-hover: ${config.mobMenu.colora};
 @mobile-menu-bg-color-active: ${config.mobMenu.bga};
 @mobile-menu-txt-color-active: ${config.mobMenu.colora};
-@mobile-header-bg-color: @header-primary-container-bg;
 
 //Content of Mobile Headers Tabs
 @mobile-submenu-bg-color: ${config.mobMenu.bga};
@@ -257,32 +336,38 @@ ${newFonts[2]}
 @mobile-submenu-txt-color-hover: @dropdown-menu-bg-hover;
 @mobile-submenu-bg-color-active: @dropdown-item-active-bg;
 @mobile-submenu-txt-color-active: @dropdown-item-active-color;
-@mobile-submenu-item-border: 0px solid @custom-color-1;
-@mobile-submenu-item-border-hover: 0px solid @custom-color-1;
-@mobile-submenu-item-border-active: 0px solid @custom-color-1;
-@mobile-submenu-item-border-top: 0px solid @custom-color-1;
+@mobile-submenu-font-size: ${config.mobMenu.fsa};
+@mobile-submenu-font-weight: ${config.mobMenu.fwa};
+@mobile-submenu-text-transform: ${config.mobMenu.tta};
 @mobile-content-bg-color: transparent;
-@mobile-content-txt-transform: ${config.mobMenu.tta};
-@mobile-content-font-size: ${config.mobMenu.fsa};
-@mobile-content-font-weight: ${config.mobMenu.fwa};
 @mobile-content-txt-color: ${config.mobMenu.colora};
 @mobile-content-link-color: ${config.link.color};
 @mobile-content-link-color-hover: ${config.link.colorh};
 
 //HomeTabs(Bestsellers, Trendings, ...)
-@tabs-bg-color: @custom-secondry-color;
-@tabs-txt-color: @custom-color-1;
-@tabs-bg-color-hover: @custom-primary-color;
-@tabs-txt-color-hover: @custom-color-1;
-@tabs-bg-color-active: @custom-primary-color;
-@tabs-txt-color-active: @custom-color-1;
+@tabs-bg-color: ${config.tabs.bg};
+@tabs-txt-color: ${config.tabs.color};
+@tabs-bg-color-hover: ${config.tabs.bgh};
+@tabs-txt-color-hover: ${config.tabs.colorh};
+@tabs-bg-color-active: ${config.tabs.bgh};
+@tabs-txt-color-active: ${config.tabs.colorh};
+// Mega submenu slider arrows
+@slider-arrows-bg: @custom-primary-color;
+@slider-arrows-color: #fff;
+@slider-arrows-bg-hover: @custom-secondry-color;
+@slider-arrows-color-hover: #fff;
 
 //Footer
 @footer-bg-color: ${config.socials.parrentbg};
 @footer-txt-color: @custom-additional-color;
-@footer-border-width: 0;
-@footer-border-top-color: @custom-additional-color;
+@footer-border-width: 5px;
+@footer-border-top-color: @custom-primary-color;
 @footer-tagline-color: ${config.tagLine.color};
+@footer-tagline-background-color: ${config.tagLine.bg};
+@footer-tagline-font-size: ${config.tagLine.fs};
+@footer-tagline-font-weight: ${config.tagLine.fw};
+@footer-tagline-transform: uppercase;
+@footer-tagline-font-family: ${config.tagLine.ff};
 
 //Footer Top Container
 @footer-top-bg-color: ${config.tagLine.bg};
@@ -291,16 +376,20 @@ ${newFonts[2]}
 //Footer Primary Container
 @footer-primary-bg-color: ${config.socials.parrentbg};
 @footer-primary-txt-color: @custom-additional-color;
+//Footer Secondary Container
+@footer-secondary-container-bg: @custom-secondry-color;
+@footer-secondary-headings-color: @custom-primary-color;
+@footer-secondary-txt-color: @custom-additional-color;
 
 //Footer links
 @footer-link-color: @custom-link-color;
 @footer-link-color-hover: @custom-link-color-hover;
 
 //Footer Bottom Container
-@footer-bottom-bg-color: @custom-secondry-color;
-@footer-bottom-txt-color: @custom-link-color;
-@footer-copyright-color: @custom-link-color;
-@footer-copyright-color-hover: @custom-link-color-hover;
+@footer-bottom-bg-color: #252120;
+@footer-bottom-txt-color: @custom-color-1;
+@footer-copyright-color: @custom-color-1;
+@footer-copyright-color-hover: @custom-primary-color;
 //  Infortis Base theme variables
 //
 
@@ -366,7 +455,7 @@ ${newFonts[2]}
 //  Borders
 //  ---------------------------------------------
 
-@global-border-color__dark: #cccccc;
+@global-border-color__dark: #ccc;
 @global-border-color: #e5e5e5;
 @global-border-color__light: #f5f5f5;
 
@@ -424,7 +513,7 @@ ${newFonts[2]}
 //SAVE LESS
   download(text, '_variables.less', 'text/css');
   function download(text, name, type) {
-    var a = document.getElementById("variables-save");
+    var a = document.getElementById("variables-save-scg");
     var file = new Blob([text], {type: type});
     a.href = URL.createObjectURL(file);
     a.download = name;
