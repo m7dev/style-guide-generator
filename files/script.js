@@ -560,9 +560,9 @@ function generateStyleGuide() {
     listStyle = {
         type: getElValue("list-input")
     }
-    // bannerSize = {
-    //     selected: getElValue("banner-input")
-    // }
+    bannerSize = {
+        selected: getElValue("banner-input")
+    }
     productName = {
         default: true,
         color: getElValue("additional-color"),
