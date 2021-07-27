@@ -25,7 +25,7 @@
             <button onclick="showJson()" class="submit" id="json" style="margin-left: -50px; background-color: #4c555d; padding: 6.5px;">Apply config</button>
         </div>
         <div id="style-buttons" style="display: none;">
-            <button class="submit"><a href="" class="submit" onclick="generateVariables()" id="variables-save" download>Generate and Save _variables.less</a></button>
+            <!-- <button class="submit"><a href="" class="submit" onclick="generateVariables()" id="variables-save" download>Generate and Save _variables.less</a></button> -->
             <button class="submit"><a href="" class="submit" onclick="generateVariablesSCG()" id="variables-save-scg" download>Generate and Save SCG _variables.less</a></button>
             <button class="submit"><a href="" class="submit" onclick="generateVariablesUMG()" id="variables-save-umg" download>Generate and Save UMG _variables.less</a></button>
             <button class="submit"><a href="" class="submit" onclick="generateTypography()" id="typography-save" download>Generate and Save _typography.less</a></button>
@@ -365,8 +365,10 @@
         <span id="message" class="info" style="display: none;">Here your Generated Image&lpar;s&rpar;:</span>
     </div>
     <br>
+
     <script src="./files/script.js"></script>
-    <script src="./files/_variables.js"></script>
+    <script src="./files/ui.js"></script>
+    <!-- <script src="./files/_variables.js"></script> -->
     <script src="./files/_variables_SCG.js"></script>
     <script src="./files/_variables_UMG.js"></script>
     <script src="./files/_typography.js"></script>

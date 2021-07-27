@@ -1,25 +1,8 @@
 var colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu;
 var config, json;
 
-var inputs = {
-    colors: ["primary-color", "secondary-color", "additional-color"],
-    buttons: ["button-padding", "button-bg", "button-color", "button-fs", "button-fw", "button-ff", "button-border", "button-br", "button-tt", "button-custom", "button-bg-h", "button-color-h", "button-custom-h"],
-    socials: ["social-bg-p", "social-bg", "social-color", "social-preview-i1", "social-preview-i2", "social-preview-i3", "social-preview-i4","social-border","social-custom","social-bg-h","social-color-h"],
-    mobMenu: ["mobmenu-el1", "mobmenu-el1", "mobmenu-el2", "mobmenu-el3", "mobmenu-el4", "mobmenu-bg", "mobmenu-color", "mobmenu-counter","mobmenu-bg-a","mobmenu-color-a","mobmenu-fs-a","mobmenu-fw-a","mobmenu-ff-a","mobmenu-tt-a","mobmenu-custom"],
-    h: ["h1-color", "h2-color", "h3-color", "h4-color", "h5-color", "h1-fs", "h2-fs", "h3-fs", "h4-fs", "h5-fs", "h1-fw", "h2-fw", "h3-fw", "h4-fw", "h5-fw", "h1-ff", "h2-ff", "h3-ff", "h4-ff", "h5-ff", "h1-tt", "h2-tt", "h3-tt", "h4-tt", "h5-tt", "h1-custom", "h2-custom", "h3-custom", "h4-custom", "h5-custom"],
-    p: ["p-color", "p-fs", "p-ff", "p-lh", "p-custom"], 
-    banners: ["banner1-bg", "banner1-color", "banner1-fs-h2", "banner1-fs-h4", "banner1-ff", "banner1-tt", "banner1-custom", "banner2-bg", "banner2-color", "banner2-fs-h2", "banner2-fs-h4", "banner2-ff", "banner2-tt", "banner2-custom"],
-    tabs: ["tabs-bg", "tabs-color", "tabs-bg-h", "tabs-color-h"],
-    link: ["link-color", "link-fw", "link-td", "link-custom", "link-color-h", "link-custom-h"],
-    catPromo: ["catpromo-padding", "catpromo-bg", "catpromo-color", "catpromo-fs", "catpromo-fw", "catpromo-ff", "catpromo-custom"],
-    skuPromo: ["skupromo-padding", "skupromo-bg", "skupromo-color", "skupromo-fs", "skupromo-fw", "skupromo-ff", "skupromo-custom"], 
-    badge: ["badge-bg", "badge-color", "badge-custom"], 
-    tagLine: ["tagline-bg", "tagline-color", "tagline-fs", "tagline-fw", "tagline-ff", "tagline-custom"], 
-    menu: ["menu-bg", "menu-custom-p", "menu-color", "menu-fs", "menu-fw", "menu-ff", "menu-tt", "menu-custom", "menu-bg-h", "menu-color-h", "menu-td-h", "menu-custom-h"], 
-    subMenu: ["submenu-bg", "submenu-custom-p", "submenu-color", "submenu-fs", "submenu-fw", "submenu-ff", "submenu-tt", "submenu-custom", "submenu-bg-h", "submenu-color-h", "submenu-td-h", "submenu-custom-h"]
-}
-
-initialConfig = { 
+//DEFAULT VALUES FOR CONFIG
+let initialConfig = { 
     colors: {
         primary: "#d3aa80", 
         secondary: "#faf5f0", 
@@ -196,8 +179,6 @@ initialConfig = {
     }
 }
 
-console.log(initialConfig);
-
 function getElValue(id, def) {
     value = document.getElementById(id).value;
     if (value == "" && def == "color1" && document.getElementById("primary-color").value !== "") {
@@ -363,9 +344,27 @@ function showJson() {
     var colors = json.colors, buttons = json.buttons, socials = json.socials, mobMenu = json.mobMenu, h = json.h, p = json.p, banners = json.banners, tabs = json.tabs, link = json.link, catPromo = json.catPromo, skuPromo = json.skuPromo, badge = json.badge, tagLine = json.tagLine, menu = json.menu, subMenu = json.subMenu;
 
     function setValues(id, values) {
-        for (let i = 0; i < id.length; i++) {
+        for (let i = 0; i < id.length && values[i] !== undefined; i++) {
             document.getElementById(id[i]).value = values[i];
         }
+    }
+
+    var inputs = {
+        colors: ["primary-color", "secondary-color", "additional-color"],
+        buttons: ["button-padding", "button-bg", "button-color", "button-fs", "button-fw", "button-ff", "button-border", "button-br", "button-tt", "button-custom", "button-bg-h", "button-color-h", "button-custom-h"],
+        socials: ["social-bg-p", "social-bg", "social-color", "social-preview-i1", "social-preview-i2", "social-preview-i3", "social-preview-i4","social-border","social-custom","social-bg-h","social-color-h"],
+        mobMenu: ["mobmenu-el1", "mobmenu-el1", "mobmenu-el2", "mobmenu-el3", "mobmenu-el4", "mobmenu-bg", "mobmenu-color", "mobmenu-counter","mobmenu-bg-a","mobmenu-color-a","mobmenu-fs-a","mobmenu-fw-a","mobmenu-ff-a","mobmenu-tt-a","mobmenu-custom"],
+        h: ["h1-color", "h2-color", "h3-color", "h4-color", "h5-color", "h1-fs", "h2-fs", "h3-fs", "h4-fs", "h5-fs", "h1-fw", "h2-fw", "h3-fw", "h4-fw", "h5-fw", "h1-ff", "h2-ff", "h3-ff", "h4-ff", "h5-ff", "h1-tt", "h2-tt", "h3-tt", "h4-tt", "h5-tt", "h1-custom", "h2-custom", "h3-custom", "h4-custom", "h5-custom"],
+        p: ["p-color", "p-fs", "p-ff", "p-lh", "p-custom"], 
+        banners: ["banner1-bg", "banner1-color", "banner1-fs-h2", "banner1-fs-h4", "banner1-ff", "banner1-tt", "banner1-custom", "banner2-bg", "banner2-color", "banner2-fs-h2", "banner2-fs-h4", "banner2-ff", "banner2-tt", "banner2-custom"],
+        tabs: ["tabs-bg", "tabs-color", "tabs-bg-h", "tabs-color-h"],
+        link: ["link-color", "link-fw", "link-td", "link-custom", "link-color-h", "link-custom-h"],
+        catPromo: ["catpromo-padding", "catpromo-bg", "catpromo-color", "catpromo-fs", "catpromo-fw", "catpromo-ff", "catpromo-custom"],
+        skuPromo: ["skupromo-padding", "skupromo-bg", "skupromo-color", "skupromo-fs", "skupromo-fw", "skupromo-ff", "skupromo-custom"], 
+        badge: ["badge-bg", "badge-color", "badge-custom"], 
+        tagLine: ["tagline-bg", "tagline-color", "tagline-fs", "tagline-fw", "tagline-ff", "tagline-custom"], 
+        menu: ["menu-bg", "menu-custom-p", "menu-color", "menu-fs", "menu-fw", "menu-ff", "menu-tt", "menu-custom", "menu-bg-h", "menu-color-h", "menu-td-h", "menu-custom-h"], 
+        subMenu: ["submenu-bg", "submenu-custom-p", "submenu-color", "submenu-fs", "submenu-fw", "submenu-ff", "submenu-tt", "submenu-custom", "submenu-bg-h", "submenu-color-h", "submenu-td-h", "submenu-custom-h"]
     }
 
     //SET FONTS
@@ -675,23 +674,3 @@ function generateSnapShot() {
     });
 }
 
-//SHOW CONTENT BUTTONS
-function contentDisplay(id) {
-    var x = document.getElementById(id);
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-}
-
-//KEY EVENTS
-window.addEventListener("keyup", (e) => {
-    var key = e.which || e.keyCode;
-    if (key === 13) {
-        generateStyleGuide();
-    }
-    if (key === 35) {
-        generateSnapShot();
-    }
-});

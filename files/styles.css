@@ -118,6 +118,8 @@ select { border: 0; }
   border-radius: 0.25rem;
 }
 
+.submit::placeholder { color: #fff; }
+
 .info {
   margin-top: 20px;
   font-size: 22px;
