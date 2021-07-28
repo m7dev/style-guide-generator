@@ -14,6 +14,7 @@
 <body>
 
     <button onclick="(contentDisplay('config-buttons'))" class="submit" id="configs">Open / Save Config file</button>
+    <button onclick="(contentDisplay('pull-website'))" class="submit" id="pull">Pull styles from Main Website</button>
     <button onclick="generateStyleGuide()" class="submit" id="generateGS">Generate Gtyle-Guide &lpar;"Enter"&rpar;</button>
     <button onclick="generateSnapShot()" class="submit" id="generateSS" >Generate Snap-Shot &lpar;"end"&rpar;</button>
     <button onclick="(contentDisplay('style-buttons'))" class="submit" id="styles" >Generate Styles</button>
@@ -23,6 +24,11 @@
             <button class="submit"><a href="" class="submit" onclick="generateJson()" id="json-save" download>Save config</a></button>
             <input type="file" id="json-open" name="files[]" class="submit"/>
             <button onclick="showJson()" class="submit" id="json" style="margin-left: -50px; background-color: #4c555d; padding: 6.5px;">Apply config</button>
+        </div>
+        <div id="pull-website" style="display: none;">
+            <iframe width="100%" id="masterhead" src=""></iframe><br>
+            <input id="main-website" class="submit" onchange="getUrl()" placeholder="Main website URL"/>
+            <button onclick="pullStyles()" class="submit" style="margin-left: -50px; background-color: #4c555d; padding: 6.5px;">Pull styles</button>
         </div>
         <div id="style-buttons" style="display: none;">
             <!-- <button class="submit"><a href="" class="submit" onclick="generateVariables()" id="variables-save" download>Generate and Save _variables.less</a></button> -->
@@ -368,6 +374,7 @@
 
     <script src="./files/script.js"></script>
     <script src="./files/ui.js"></script>
+    <script src="./files/pull.js"></script>
     <!-- <script src="./files/_variables.js"></script> -->
     <script src="./files/_variables_SCG.js"></script>
     <script src="./files/_variables_UMG.js"></script>
