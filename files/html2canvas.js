@@ -6974,7 +6974,7 @@
                         x: left,
                         y: top,
                         width: Math.ceil(width),
-                        height: "2200", //height config
+                        height: "2500", //height config
                         id: instanceName
                     };
                     options = __assign({}, defaultOptions, resourceOptions, opts);
