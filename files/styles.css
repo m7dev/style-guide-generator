@@ -27,18 +27,29 @@
 .hiden, .hiden::placeholder { color: transparent; }
 
 p { font-size: 13px; margin: 10px 0; }
-.logo img { max-height: 100px; }
+.logo img { max-height: 120px; }
 #logo-btn { color: #fff; }
 section > .item { padding: 10px 10px 0 70px; position: relative; }
-section > .item::before { position: absolute; left: 50px; top: 20px; }
+
+section > .item::before { position: absolute; left: 50px; top: 20px; font-weight: 600; }
 .item.font-family::before { content: "0."; }
 .item.logo::before { content: "1."; }
 .item.colors::before { content: "2."; }
 .item.button::before { content: "3."; }
+.item.links::before { content: "4."; }
+.item.badge::before { content: "5."; }
+.item.mobmenu::before { content: "6."; }
+.item.heading::before { content: "7."; }
+.item.paragraph::before { content: "8."; }
+.item.banners::before { content: "9."; }
+.item.tabs::before { content: "10."; }
+.item.banner::before { content: "11."; }
+.item.catpromo::before { content: "12."; }
+.item.skupromo::before { content: "13."; }
+.item.footer::before { content: "14."; }
+.item.menu::before { content: "15."; }
+
 .button-preview { max-width: 150px; min-height: 20px; text-align: center; }
-.item.social::before { content: "4."; }
-.social-preview { max-width: 150px; padding: 4px; }
-.item.banner::before { content: "5."; }
 
 .mobmenu-preview { position: relative; }
 
@@ -66,20 +77,19 @@ section > .item::before { position: absolute; left: 50px; top: 20px; }
 #mobmenu-prev-drop > li { padding: 8px; position: relative; }
 #mobmenu-prev-drop > li::after { content: "+"; top: 6px; position: absolute; right: 10px; }
 
-.item.heading::before { content: "5."; }
-.item.paragraph::before { content: "6."; }
 .banner-preview { text-align: center; }
 .banner-preview * { letter-spacing: -1px; font-family: "Work Sans", sans-serif; }
 #banner1-preview { margin-left: -80px; width: 750px; min-height: 70px; padding: 15px; }
 #banner2-preview { margin-left: -80px; width: 750px; min-height: 70px; padding: 15px; }
 #banner1-h2 { padding: 10px; }
-.item.links::before { content: "7."; }
-.item.catpromo::before { content: "8."; }
-.item.skupromo::before { content: "9."; }
-.item.badge::before { content: "10."; }
-.item.tagline::before { content: "11."; }
-.tagline-preview { padding-right: 20px; text-align: right; max-width: 500px; }
-.item.menu::before { content: "12."; }
+
+.tagline-preview { padding: 5px 20px; text-align: right; max-width: 500px; }
+.footer-primary { padding: 20px; max-width: 500px; }
+.footer-primary > * { display: inline-block; margin: 5px; }
+.footer-content { display: block; }
+.social-preview { background-color: transparent; max-width: 200px; }
+.footer-button-preview { margin-left: 220px; min-width: 100px; text-align: center; }
+
 .menu-preview { margin: 10px 0; height: 40px; vertical-align: middle; width: 580px; }
 .menu-preview > .nav { display: inline-block; margin: 6px; padding: 5px; }
 .menu-preview > .nav::after { content: "⌄"; top: -4px; position: relative; right: -2px; }

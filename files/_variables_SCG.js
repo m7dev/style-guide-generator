@@ -358,10 +358,10 @@ ${newFonts[2]}
 @slider-arrows-color-hover: #fff;
 
 //Footer
-@footer-bg-color: ${config.socials.parrentbg};
-@footer-txt-color: @custom-additional-color;
+@footer-bg-color: ${config.footer.bg};
+@footer-txt-color: ${config.footer.color};
 @footer-border-width: 5px;
-@footer-border-top-color: @custom-primary-color;
+@footer-border-top-color: ${config.tagLine.bg};
 @footer-tagline-color: ${config.tagLine.color};
 @footer-tagline-background-color: ${config.tagLine.bg};
 @footer-tagline-font-size: ${config.tagLine.fs};
@@ -374,22 +374,22 @@ ${newFonts[2]}
 @footer-top-txt-color: ${config.tagLine.color};
 
 //Footer Primary Container
-@footer-primary-bg-color: ${config.socials.parrentbg};
-@footer-primary-txt-color: @custom-additional-color;
+@footer-primary-bg-color: ${config.footer.bg};
+@footer-primary-txt-color: ${config.footer.color};
 //Footer Secondary Container
-@footer-secondary-container-bg: @custom-secondry-color;
-@footer-secondary-headings-color: @custom-primary-color;
-@footer-secondary-txt-color: @custom-additional-color;
+@footer-secondary-container-bg: ${config.footer.bg};
+@footer-secondary-headings-color: ${config.footer.color};
+@footer-secondary-txt-color: ${config.footer.color};
 
 //Footer links
-@footer-link-color: @custom-link-color;
-@footer-link-color-hover: @custom-link-color-hover;
+@footer-link-color: ${config.footer.linkColor};
+@footer-link-color-hover: ${config.footer.linkColorH};
 
 //Footer Bottom Container
-@footer-bottom-bg-color: #252120;
-@footer-bottom-txt-color: @custom-color-1;
-@footer-copyright-color: @custom-color-1;
-@footer-copyright-color-hover: @custom-primary-color;
+@footer-bottom-bg-color: ${config.footerBottom.bg};
+@footer-bottom-txt-color: ${config.footerBottom.color};
+@footer-copyright-color: ${config.footerBottom.linkColor};
+@footer-copyright-color-hover: ${config.footerBottom.linkColorH};
 //  Infortis Base theme variables
 //
 

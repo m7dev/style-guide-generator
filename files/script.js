@@ -4,43 +4,38 @@ var config, json;
 //DEFAULT VALUES FOR CONFIG
 let initialConfig = { 
     colors: {
-        primary: "#d3aa80", 
-        secondary: "#faf5f0", 
-        additional: "#666"
+        primary: "#900", 
+        secondary: "#777", 
+        additional: "#333"
     },
     buttons: {
         id: ["button-preview", "button-preview-h"],
         padding: "5px", 
-        bg: "#d3aa80", 
+        bg: "#900", 
         color: "#fff", 
         fs: "16px", 
         fw: "300",
         ff: '"Open Sans", Helvetica, sans-serif',
         border: "0px solid #fff",
-        br: "unset",
-        tt: "unset",
+        br: "",
+        tt: "",
         custom: "",
-        bgh: "#666",
+        bgh: "#333",
         colorh: "#fff",
         customh: ""
     },
-    socials: {
-        parrentid: "social-preview",
-        parrentbg: "#fff",
-        id: ["social-preview-i1", "social-preview-i2", "social-preview-i3", "social-preview-i4"],
-        bg: "#666", 
+    badge: {
+        id: "badge-preview",
+        bg: "#900",
         color: "#fff",
-        border: "0px solid #fff",
-        custom: "",
-        bgh: "#ddd", 
-        colorh: "#fff"
+        custom: ""
     },
     mobMenu: {
         id: ["mobmenu-prev", "mobmenu-prev-counter", "mobmenu-prev-active"],
         eids: ["mobmenu-el1", "mobmenu-el2", "mobmenu-el3", "mobmenu-el4"],
         bg: "#fff", 
-        color: "#666", 
-        counterbg: "#666", 
+        color: "#333", 
+        counterbg: "#333", 
         bga: "#ddd", 
         colora: "#fff",
         fsa: "14px",
@@ -51,7 +46,7 @@ let initialConfig = {
     },
     h: {
         id: ["h1-preview", "h2-preview", "h3-preview", "h4-preview", "h5-preview"],
-        color: { e1:"#000", e2:"#000", e3:"#666", e4:"#000", e5:"#000" },
+        color: { e1:"#000", e2:"#000", e3:"#333", e4:"#000", e5:"#000" },
         fs: { e1:"32px", e2:"30px", e3:"26px", e4:"20px", e5:"16px" },
         fw: { e1:"400", e2:"400", e3:"400", e4:"400", e5:"400" },
         ff: { e1:'"Open Sans", Helvetica, sans-serif', e2:'"Open Sans", Helvetica, sans-serif', e3:'"Open Sans", Helvetica, sans-serif', e4:'"Open Sans", Helvetica, sans-serif', e5:'"Open Sans", Helvetica, sans-serif' },
@@ -75,7 +70,7 @@ let initialConfig = {
         ff1: '"Open Sans", Helvetica, sans-serif', 
         tt1: "uppercase",
         custom1: "",  
-        bg2: "#666",
+        bg2: "#333",
         color2: "#fff",
         fs2h2: "22px",
         fs2h4: "14px",
@@ -85,7 +80,7 @@ let initialConfig = {
     },
     tabs: {
         id: ["tab1", "tab2", "tab3"],
-        bg: "#d3aa80",
+        bg: "#900",
         color: "#fff",
         bgh: "#333",
         colorh: "#fff"
@@ -94,7 +89,7 @@ let initialConfig = {
         id: ["link-preview","link-preview-h"],
         color: getElValue("link-color", "color1"),
         fw: "300",
-        td: "unset",
+        td: "",
         custom:"",
         colorh: getElValue("link-color-h", "color2"),
         customh: ""
@@ -119,12 +114,6 @@ let initialConfig = {
         ff: '"Open Sans", Helvetica, sans-serif',
         custom: ""
     },
-    badge: {
-        id: "badge-preview",
-        bg: "#d3aa80",
-        color: "#fff",
-        custom: ""
-    },
     tagLine: {
         id: "tagline-preview",
         bg: "#ddd",
@@ -134,11 +123,45 @@ let initialConfig = {
         ff: '"Open Sans", Helvetica, sans-serif',
         custom: ""
     },
+    socials: {
+        parrentid: "social-preview",
+        parrentbg: "",
+        id: ["social-preview-i1", "social-preview-i2", "social-preview-i3", "social-preview-i4"],
+        bg: "#333", 
+        color: "#fff",
+        border: "0px solid #fff",
+        custom: "",
+        bgh: "#ddd", 
+        colorh: "#fff"
+    },
+    footer: {
+        id: ["footer-primary", "footer-link", "footer-link-h", "footer-button"],
+        bg: "#333",
+        color: "#fff",
+        linkColor: "#fff",
+        buttonBg: "#900",
+        buttonColor: "#fff",
+        buttonBgH: "#777",
+        buttonColorH: "#333",
+        custom: "",
+        linkColorH: "#fff",
+        customH: ""
+    },
+    footerBottom: {
+        id: ["footer-bottom", "footer-bottom-link"],
+        bg: "#000",
+        color: "#fff",
+        custom: "",
+        linkColor: "#fff",
+        linkCustom: "",
+        linkColorH: "#fff",
+        linkCustomH: ""
+    },
     menu: {
         id: ["menu-prev", "nav1-prev", "nav2-prev", "nav3-prev"],
         bg: "#fff",
         customp: "",
-        color: "#666",
+        color: "#333",
         fs: "16px",
         fw: "400",
         ff: '"Open Sans", Helvetica, sans-serif',
@@ -146,22 +169,22 @@ let initialConfig = {
         custom: "",
         bgh: "transparent",
         colorh: "#ddd",
-        tdh: "unset",
+        tdh: "",
         customh: ""
     },
     subMenu: {
         id: ["sub-prev", "sub1-prev", "sub2-prev", "sub3-prev", "sub4-prev"],
         bg: "#fff",
         customp: "",
-        color: "#666",
+        color: "#333",
         fs: "14px",
         fw: "400",
         ff: '"Open Sans", Helvetica, sans-serif',
         tt: "capitalize",
         custom: "",
         bgh: "#ddd",
-        colorh: "#666",
-        tdh: "unset",
+        colorh: "#333",
+        tdh: "",
         customh: ""
     },
     listStyle: {
@@ -172,7 +195,7 @@ let initialConfig = {
     },
     productName: {
         default: true,
-        color: "#666",
+        color: "#333",
         tt: "uppercase",
         fs: "18px",
         fw: "400"
@@ -232,7 +255,7 @@ function setProperties(id, padding, bgColor, color, fsize, fweight, ffamily, bor
     document.getElementById(id).style.cssText = newCssText;
 }
 
-function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu) {
+function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, footer, footerBottom) {
     //SET COLORS
     document.getElementById("primary-color-preview").style.backgroundColor = colors.primary;
     document.getElementById("secondary-color-preview").style.backgroundColor = colors.secondary;
@@ -242,12 +265,7 @@ function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs
     setProperties (buttons.id[0], buttons.padding, buttons.bg, buttons.color, buttons.fs, buttons.fw, buttons.ff, buttons.border, buttons.br, "", buttons.tt, "", buttons.custom);
     setProperties (buttons.id[1], buttons.padding, buttons.bgh, buttons.colorh, buttons.fs, buttons.fw, buttons.ff, buttons.border, buttons.br, "", buttons.tt, "", buttons.customh);
 
-    setProperties (socials.parrentid, "", socials.parrentbg, "", "", "", "", "", "", "", "", "", "");
-    socials.id.forEach(element => {
-        setProperties (element, "", socials.bg, socials.color, "", "", "", socials.border, "", "", "", "", socials.custom);
-    });
-    setProperties (socials.id[3], "", socials.bgh, socials.colorh, "", "", "", socials.border, "", "", "", "", socials.custom);
-
+    setProperties (badge.id, "", badge.bg, badge.color, "", "", "", "", "", "", "", "", badge.custom);
 
     setProperties (mobMenu.id[0], "", mobMenu.bg, mobMenu.color, "", "", "", "", "", "", "", "", "");
     setProperties (mobMenu.id[1], "", mobMenu.counterbg, "", "", "", "", "", "", "", "", "", "");
@@ -272,8 +290,20 @@ function setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs
     setProperties (catPromo.id, catPromo.padding, catPromo.bg, catPromo.color, catPromo.fs, catPromo.fw, catPromo.ff, "", "", "", "", "", catPromo.custom);
     setProperties (skuPromo.id, skuPromo.padding, skuPromo.bg, skuPromo.color, skuPromo.fs, skuPromo.fw, skuPromo.ff, "", "", "", "", "", skuPromo.custom);
 
-    setProperties (badge.id, "", badge.bg, badge.color, "", "", "", "", "", "", "", "", badge.custom);
     setProperties (tagLine.id, "", tagLine.bg, tagLine.color, tagLine.fs, tagLine.fw, tagLine.ff, "", "", "", "", "", tagLine.custom);
+    setProperties (footer.id[0], "", footer.bg, footer.color, "", "", "", "", "", "", "", "", "");
+    setProperties (footer.id[1], "", "", footer.linkColor, "", "", "", "", "", "", "", "", footer.custom);
+    setProperties (footer.id[2], "", "", footer.linkColorH, "", "", "", "", "", "", "", "", footer.customH);
+    setProperties (footer.id[3], "", footer.buttonBg, footer.buttonColor, buttons.fs, buttons.fw, buttons.ff, buttons.border, buttons.br, "", buttons.tt, "", buttons.custom);
+
+    setProperties (footerBottom.id[0], "", footerBottom.bg, footerBottom.color, "", "", "", "", "", "", "", "", footerBottom.custom);
+    setProperties (footerBottom.id[1], "", "", footerBottom.linkColor, "", link.fw, "", "", "", "", "", link.td, footerBottom.linkCustom);
+
+    setProperties (socials.parrentid, "", socials.parrentbg, "", "", "", "", "", "", "", "", "", "");
+    socials.id.forEach(element => {
+        setProperties (element, "", socials.bg, socials.color, "", "", "", socials.border, "", "", "", "", socials.custom);
+    });
+    setProperties (socials.id[3], "", socials.bgh, socials.colorh, "", "", "", socials.border, "", "", "", "", socials.custom);
 
     setProperties (menu.id[0], "", menu.bg, "", "", "", "", "", "", "", "", "", menu.customp);
     setProperties (menu.id[1], "", "", menu.color, menu.fs, menu.fw, menu.ff, "", "", "", menu.tt, "", menu.custom);
@@ -341,8 +371,24 @@ document.getElementById('json-open').addEventListener('change', handleFileSelect
 
 //SHOW JSON
 function showJson() {
-    var colors = json.colors, buttons = json.buttons, socials = json.socials, mobMenu = json.mobMenu, h = json.h, p = json.p, banners = json.banners, tabs = json.tabs, link = json.link, catPromo = json.catPromo, skuPromo = json.skuPromo, badge = json.badge, tagLine = json.tagLine, menu = json.menu, subMenu = json.subMenu;
+    var colors = json.colors,
+    buttons = json.buttons,
+    socials = json.socials,
+    mobMenu = json.mobMenu,
+    h = json.h, p = json.p,
+    banners = json.banners,
+    tabs = json.tabs,
+    link = json.link,
+    catPromo = json.catPromo,
+    skuPromo = json.skuPromo,
+    badge = json.badge,
+    tagLine = json.tagLine,
+    menu = json.menu,
+    subMenu = json.subMenu,
+    footer = (json.footer ? json.footer : ""),
+    footerBottom = (json.footerBottom ? json.footerBottom : "");
 
+    //To fill inputs after getting config
     function setValues(id, values) {
         for (let i = 0; i < id.length && values[i] !== undefined; i++) {
             document.getElementById(id[i]).value = values[i];
@@ -352,8 +398,8 @@ function showJson() {
     var inputs = {
         colors: ["primary-color", "secondary-color", "additional-color"],
         buttons: ["button-padding", "button-bg", "button-color", "button-fs", "button-fw", "button-ff", "button-border", "button-br", "button-tt", "button-custom", "button-bg-h", "button-color-h", "button-custom-h"],
-        socials: ["social-bg-p", "social-bg", "social-color", "social-preview-i1", "social-preview-i2", "social-preview-i3", "social-preview-i4","social-border","social-custom","social-bg-h","social-color-h"],
-        mobMenu: ["mobmenu-el1", "mobmenu-el1", "mobmenu-el2", "mobmenu-el3", "mobmenu-el4", "mobmenu-bg", "mobmenu-color", "mobmenu-counter","mobmenu-bg-a","mobmenu-color-a","mobmenu-fs-a","mobmenu-fw-a","mobmenu-ff-a","mobmenu-tt-a","mobmenu-custom"],
+        badge: ["badge-bg", "badge-color", "badge-custom"], 
+        mobMenu: ["mobmenu-bg", "mobmenu-color", "mobmenu-counter","mobmenu-bg-a","mobmenu-color-a","mobmenu-fs-a","mobmenu-fw-a","mobmenu-ff-a","mobmenu-tt-a","mobmenu-custom"],
         h: ["h1-color", "h2-color", "h3-color", "h4-color", "h5-color", "h1-fs", "h2-fs", "h3-fs", "h4-fs", "h5-fs", "h1-fw", "h2-fw", "h3-fw", "h4-fw", "h5-fw", "h1-ff", "h2-ff", "h3-ff", "h4-ff", "h5-ff", "h1-tt", "h2-tt", "h3-tt", "h4-tt", "h5-tt", "h1-custom", "h2-custom", "h3-custom", "h4-custom", "h5-custom"],
         p: ["p-color", "p-fs", "p-ff", "p-lh", "p-custom"], 
         banners: ["banner1-bg", "banner1-color", "banner1-fs-h2", "banner1-fs-h4", "banner1-ff", "banner1-tt", "banner1-custom", "banner2-bg", "banner2-color", "banner2-fs-h2", "banner2-fs-h4", "banner2-ff", "banner2-tt", "banner2-custom"],
@@ -361,8 +407,10 @@ function showJson() {
         link: ["link-color", "link-fw", "link-td", "link-custom", "link-color-h", "link-custom-h"],
         catPromo: ["catpromo-padding", "catpromo-bg", "catpromo-color", "catpromo-fs", "catpromo-fw", "catpromo-ff", "catpromo-custom"],
         skuPromo: ["skupromo-padding", "skupromo-bg", "skupromo-color", "skupromo-fs", "skupromo-fw", "skupromo-ff", "skupromo-custom"], 
-        badge: ["badge-bg", "badge-color", "badge-custom"], 
         tagLine: ["tagline-bg", "tagline-color", "tagline-fs", "tagline-fw", "tagline-ff", "tagline-custom"], 
+        socials: ["social-bg-p", "social-bg", "social-color", "social-preview-i1", "social-preview-i2", "social-preview-i3", "social-preview-i4","social-border","social-custom","social-bg-h","social-color-h"],
+        footer: ["footer-bg", "footer-color", "footer-link-color", "footer-custom", "footer-link-color-h", "footer-custom-h", "footer-button-bg", "footer-button-color", "footer-button-custom", "footer-button-bg-h", "footer-button-color-h"],
+        footerBottom: ["footer-bottom-bg", "footer-bottom-color", "footer-bottom-custom", "footer-bottom-link-color", "footer-bottom-link-custom", "footer-bottom-link-h", "footer-bottom-link-custom-h"],
         menu: ["menu-bg", "menu-custom-p", "menu-color", "menu-fs", "menu-fw", "menu-ff", "menu-tt", "menu-custom", "menu-bg-h", "menu-color-h", "menu-td-h", "menu-custom-h"], 
         subMenu: ["submenu-bg", "submenu-custom-p", "submenu-color", "submenu-fs", "submenu-fw", "submenu-ff", "submenu-tt", "submenu-custom", "submenu-bg-h", "submenu-color-h", "submenu-td-h", "submenu-custom-h"]
     }
@@ -371,11 +419,11 @@ function showJson() {
     var fonts = [buttons.ff, mobMenu.ffa, h.ff.e1, h.ff.e2, h.ff.e3, h.ff.e4, h.ff.e5, p.ff, banners.ff1, banners.ff2, catPromo.ff, skuPromo.ff, tagLine.ff, menu.ff, subMenu.ff];
     getFonts(fonts);
 
-    setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu);
+    setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, footer, footerBottom);
     setValues(inputs.colors, [colors.primary, colors.secondary, colors.additional]);
     setValues(inputs.buttons, [buttons.padding, buttons.bg, buttons.color, buttons.fs, buttons.fw, buttons.ff, buttons.border, buttons.br, buttons.tt, buttons.custom, buttons.bgh, buttons.colorh, buttons.customh]);
-    setValues(inputs.socials, [socials.parrentbg, socials.bg, socials.color, socials.id[0], socials.id[1], socials.id[2], socials.id[3], socials.border, socials.custom, socials.bgh, socials.colorh]);
-    setValues(inputs.mobMenu, [mobMenu.eids[0], mobMenu.eids[1], mobMenu.eids[2], mobMenu.eids[3], mobMenu.eids[4], mobMenu.bg, mobMenu.color, mobMenu.counterbg, mobMenu.bga, mobMenu.colora, mobMenu.fsa, mobMenu.fwa, mobMenu.ffa, mobMenu.tta, mobMenu.custom]);
+    setValues(inputs.badge, [badge.bg, badge.color, badge.custom]);
+    setValues(inputs.mobMenu, [mobMenu.bg, mobMenu.color, mobMenu.counterbg, mobMenu.bga, mobMenu.colora, mobMenu.fsa, mobMenu.fwa, mobMenu.ffa, mobMenu.tta, mobMenu.custom]);
     setValues(inputs.h, [h.color.e1, h.color.e2, h.color.e3, h.color.e4, h.color.e5, h.fs.e1, h.fs.e2, h.fs.e3, h.fs.e4, h.fs.e5, h.fw.e1, h.fw.e2, h.fw.e3, h.fw.e4, h.fw.e5, h.ff.e1, h.ff.e2, h.ff.e3, h.ff.e4, h.ff.e5, h.tt.e1, h.tt.e2, h.tt.e3, h.tt.e4, h.tt.e5, h.custom.e1, h.custom.e2, h.custom.e3, h.custom.e4, h.custom.e5]);
     setValues(inputs.p, [p.color, p.fs, p.ff, p.lh, p.custom]);
     setValues(inputs.banners, [banners.bg1, banners.color1, banners.fs1h2, banners.fs1h4, banners.ff1, banners.tt1, banners.custom1, banners.bg2, banners.color2, banners.fs2h2, banners.fs2h4, banners.ff2, banners.tt2, banners.custom2]);
@@ -383,12 +431,14 @@ function showJson() {
     setValues(inputs.link, [link.color, link.fw, link.td, link.custom, link.colorh, link.customh]);
     setValues(inputs.catPromo, [catPromo.padding, catPromo.bg, catPromo.color, catPromo.fs, catPromo.fw, catPromo.ff, catPromo.custom]);
     setValues(inputs.skuPromo, [skuPromo.padding, skuPromo.bg, skuPromo.color, skuPromo.fs, skuPromo.fw, skuPromo.ff, skuPromo.custom]);
-    setValues(inputs.badge, [badge.bg, badge.color, badge.custom]);
     setValues(inputs.tagLine, [tagLine.bg, tagLine.color, tagLine.fs, tagLine.fw, tagLine.ff, tagLine.custom]);
+    setValues(inputs.footer, [footer.bg, footer.color, footer.linkColor, footer.custom, footer.linkColorH, footer. buttonBg, footer.buttonColor, footer.buttonBgH, footer.buttonColorH, footer.customH]);
+    setValues(inputs.footerBottom, [footerBottom.bg, footerBottom.color, footerBottom.custom, footerBottom.linkColor, footerBottom.linkCustom, footerBottom.linkColorH, footerBottom.linkCustomH]);
+    setValues(inputs.socials, [socials.parrentbg, socials.bg, socials.color, socials.id[0], socials.id[1], socials.id[2], socials.id[3], socials.border, socials.custom, socials.bgh, socials.colorh]);
     setValues(inputs.menu, [menu.bg, menu.customp, menu.color, menu.fs, menu.fw, menu.ff, menu.tt, menu.custom, menu.bgh, menu.colorh, menu.tdh, menu.customh]);
     setValues(inputs.subMenu, [subMenu.bg, subMenu.customp, subMenu.color, subMenu.fs, subMenu.fw, subMenu.ff, subMenu.tt, subMenu.custom, subMenu.bgh, subMenu.colorh, subMenu.tdh, subMenu.customh]);
 
-    config = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu};
+    config = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, footer, footerBottom};
 }
 
 //GENERATE STYLE GUIDE
@@ -407,7 +457,7 @@ function generateStyleGuide() {
         fs: getElValue("button-fs"), 
         fw: getElValue("button-fw"),
         ff: getElValue("button-ff"),
-        border: getElValue("button-border", "unset"),
+        border: getElValue("button-border", ""),
         br: getElValue("button-br"),
         tt: getElValue("button-tt"),
         custom: getElValue("button-custom"),
@@ -415,16 +465,11 @@ function generateStyleGuide() {
         colorh: getElValue("button-color-h"),
         customh: getElValue("button-custom-h")
     }
-    socials = {
-        parrentid: "social-preview",
-        parrentbg: getElValue("social-bg-p"),
-        id: ["social-preview-i1", "social-preview-i2", "social-preview-i3", "social-preview-i4"],
-        bg: getElValue("social-bg", "color3"), 
-        color: getElValue("social-color"),
-        border: getElValue("social-border"),
-        custom: getElValue("social-custom"),
-        bgh: getElValue("social-bg-h", "color1"), 
-        colorh: getElValue("social-color-h")
+    badge = {
+        id: "badge-preview",
+        bg: getElValue("badge-bg", "color1"),
+        color: getElValue("badge-color"),
+        custom: getElValue("badge-custom")
     }
     mobMenu = {
         id: ["mobmenu-prev", "mobmenu-prev-counter", "mobmenu-prev-active"],
@@ -511,12 +556,6 @@ function generateStyleGuide() {
         ff: getElValue("skupromo-ff", "font"),
         custom: getElValue("skupromo-custom")
     }
-    badge = {
-        id: "badge-preview",
-        bg: getElValue("badge-bg", "color1"),
-        color: getElValue("badge-color"),
-        custom: getElValue("badge-custom")
-    }
     tagLine = {
         id: "tagline-preview",
         bg: getElValue("tagline-bg", "color1"),
@@ -525,6 +564,40 @@ function generateStyleGuide() {
         fw: getElValue("tagline-fw"),
         ff: getElValue("tagline-ff", "font"),
         custom: getElValue("tagline-custom")
+    }
+    footer = {
+        id: ["footer-primary", "footer-link", "footer-link-h", "footer-button"],
+        bg: getElValue("footer-bg"),
+        color: getElValue("footer-color"),
+        linkColor: getElValue("footer-link-color"),
+        custom: getElValue("footer-custom"),
+        linkColorH: getElValue("footer-link-color-h"),
+        buttonBg: getElValue("footer-button-bg", "color1"),
+        buttonColor: getElValue("footer-button-color"),
+        buttonBgH: getElValue("footer-button-bg-h"),
+        buttonColorH: getElValue("footer-button-color-h"),
+        customH: getElValue("footer-custom-h")
+    }
+    socials = {
+        parrentid: "social-preview",
+        parrentbg: getElValue("social-bg-p"),
+        id: ["social-preview-i1", "social-preview-i2", "social-preview-i3", "social-preview-i4"],
+        bg: getElValue("social-bg", "color3"), 
+        color: getElValue("social-color"),
+        border: getElValue("social-border"),
+        custom: getElValue("social-custom"),
+        bgh: getElValue("social-bg-h", "color1"), 
+        colorh: getElValue("social-color-h")
+    }
+    footerBottom = {
+        id: ["footer-bottom", "footer-bottom-link"],
+        bg: getElValue("footer-bottom-bg"),
+        color: getElValue("footer-bottom-color"),
+        custom: getElValue("footer-bottom-custom"),
+        linkColor: getElValue("footer-bottom-link-color"),
+        linkCustom: getElValue("footer-bottom-link-custom"),
+        linkColorH: getElValue("footer-bottom-link-h"),
+        linkCustomH: getElValue("footer-bottom-link-custom-h"),
     }
     menu = {
         id: ["menu-prev", "nav1-prev", "nav2-prev", "nav3-prev"],
@@ -574,8 +647,8 @@ function generateStyleGuide() {
     var fonts = [buttons.ff, mobMenu.ffa, h.ff.e1, h.ff.e2, h.ff.e3, h.ff.e4, h.ff.e5, p.ff, banners.ff1, banners.ff2, catPromo.ff, skuPromo.ff, tagLine.ff, menu.ff, subMenu.ff];
     getFonts(fonts);
 
-    setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu);
-    let newConfig = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, listStyle, bannerSize, productName};
+    setAllProperties(colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, footer, footerBottom);
+    let newConfig = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, listStyle, bannerSize, productName, footer, footerBottom};
     Object.keys({...initialConfig.colors,...newConfig.colors}).map(key=>{
         colors[key]=newConfig.colors[key]||initialConfig.colors[key]
     })
@@ -630,8 +703,14 @@ function generateStyleGuide() {
     Object.keys({...initialConfig.productName,...newConfig.productName}).map(key=>{
         productName[key]=newConfig.productName[key]||initialConfig.productName[key]
     })
+    Object.keys({...initialConfig.footer,...newConfig.footer}).map(key=>{
+        footer[key]=newConfig.footer[key]||initialConfig.footer[key]
+    })
+    Object.keys({...initialConfig.footerBottom,...newConfig.footerBottom}).map(key=>{
+        footerBottom[key]=newConfig.footerBottom[key]||initialConfig.footerBottom[key]
+    })
 
-    config = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, listStyle, bannerSize, productName};
+    config = {colors, buttons, socials, mobMenu, h, p, banners, tabs, link, catPromo, skuPromo, badge, tagLine, menu, subMenu, listStyle, bannerSize, productName, footer, footerBottom};
 }
 
 //SET LOGO
@@ -667,7 +746,6 @@ function download(text, name, type) {
 function generateSnapShot() {
     var canvas = document.getElementById("style-guide");
     html2canvas(canvas).then(canvas => {
-        // document.body.appendChild(canvas)
         document.getElementById("canvas").appendChild(canvas);
         window.location.href = '#canvas';
         document.getElementById("message").style.display = "block";
