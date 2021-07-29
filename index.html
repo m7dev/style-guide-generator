@@ -25,11 +25,11 @@
             <button onclick="showJson()" class="submit" id="json" style="margin-left: -50px; background-color: #4c555d; padding: 6.5px;">Apply config</button>
         </div>
         <div id="style-buttons" style="display: none;">
-            <!-- <button class="submit"><a href="" class="submit" onclick="generateVariables()" id="variables-save" download>Generate and Save _variables.less</a></button> -->
             <button class="submit"><a href="" class="submit" onclick="generateVariablesSCG()" id="variables-save-scg" download>Generate and Save SCG _variables.less</a></button>
             <button class="submit"><a href="" class="submit" onclick="generateVariablesUMG()" id="variables-save-umg" download>Generate and Save UMG _variables.less</a></button>
             <button class="submit"><a href="" class="submit" onclick="generateTypography()" id="typography-save" download>Generate and Save _typography.less</a></button>
-            <button class="submit"><a href="" class="submit" onclick="generateText()" id="text-save" download>Generate and Save as Text</a></button>
+            <!-- <button class="submit"><a href="" class="submit" onclick="generateVariables()" id="variables-save" download>Generate and Save _variables.less</a></button> -->
+            <!-- <button class="submit"><a href="" class="submit" onclick="generateText()" id="text-save" download>Generate and Save as Text</a></button> -->
         </div>
         <div id="help-text" class="info" style="display: none; font-size: 16px; padding-bottom: 10px;">
             <span>1. Fill in the form according to the customer's requirements or according to the existing customer's web-site and click "Generate Style-Guide" or the "Enter" key.</span><br>
@@ -53,42 +53,42 @@
                 </p>
                 <div class="primary color">
                     <div class="primary color-preview" id="primary-color-preview"></div>
-                    <p>PRIMARY COLOR: <br/><input id="primary-color" placeholder="#d3aa80" style="width: 100px;" type="text"></input></p>
+                    <p>PRIMARY COLOR: <br/><input id="primary-color" placeholder="#900" style="width: 100px;" type="text"></input></p>
                 </div><br>
                 <div class="secondary color">
                     <div class="secondary color-preview" id="secondary-color-preview"></div>
-                    <p>SECONDARY COLOR: <br/><input id="secondary-color" placeholder="#faf5f0" style="width: 100px;" type="text"></input></p>
+                    <p>SECONDARY COLOR: <br/><input id="secondary-color" placeholder="#777" style="width: 100px;" type="text"></input></p>
                 </div>
                 <div class="additional color">
                     <div class="additional color-preview" id="additional-color-preview"></div>
-                    <p>ADDITIONAL COLOR: <br/><input id="additional-color" placeholder="#666666" style="width: 100px;" type="text"></input></p>
+                    <p>ADDITIONAL COLOR: <br/><input id="additional-color" placeholder="#333" style="width: 100px;" type="text"></input></p>
                 </div>
             </div>
             <div class="button item">
                 <p>TEXT-BUTTONS (SG-104)</p>
                 <div id="button-preview" class="button-preview"><span>Add to cart</span></div><br/>
-                    <span>background-color:</span><input id="button-bg" placeholder="#d3aa80" type="text"></input><br>
+                    <span>background-color:</span><input id="button-bg" placeholder="#900" type="text"></input><br>
                     <span class="hiden">padding &lpar;not required&rpar;:</span><input class="hiden" id="button-padding" placeholder="5px" type="text"></input><br>
                     <span>color:</span><input id="button-color" placeholder="#fff" type="text"></input><br>
                     <span>font-size:</span><input id="button-fs" placeholder="16px" type="text"></input><br>
                     <span>font-weight:</span><input id="button-fw" placeholder="300" type="text"></input><br>
                     <span>font-family:</span><input id="button-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
                     <span>border:</span><input id="button-border" placeholder="0px solid #fff" type="text"></input><br>
-                    <span>border-radius:</span><input id="button-br" placeholder="unset" type="text"></input><br>
-                    <span>text-transform:</span><input id="button-tt" placeholder="unset" type="text"></input><br>
+                    <span>border-radius:</span><input id="button-br" placeholder="" type="text"></input><br>
+                    <span>text-transform:</span><input id="button-tt" placeholder="" type="text"></input><br>
                     <textarea class="custom-input" id="button-custom" placeholder="/* custom css */" type="text"></textarea><br>
                 <input style="font-size: 14px; color: #000;" value="Hover:" type="text"></input><br>
                 <div id="button-preview-h" class="button-preview hover"><span>Add to cart</span></div><br/>
-                    <span>background-color:</span><input id="button-bg-h" placeholder="#666" type="text"></input><br>
+                    <span>background-color:</span><input id="button-bg-h" placeholder="#333" type="text"></input><br>
                     <span>color:</span><input id="button-color-h" placeholder="#fff" type="text"></input><br>
                     <textarea class="custom-input" id="button-custom-h" placeholder="/* custom css */" type="text"></textarea><br>
             </div>
             <div class="links item">
                 <p>TEXT-LINKS AND LISTS STYLES (SG-112)</p>
                 <p id="link-p-preview" class="p-preview">Lorem ipsum <span id="link-preview">text link</span>, and <span id="link-preview-h">link hover</span> dolor sit amet</p>
-                <span>color:</span><input id="link-color" placeholder="#d3aa80" type="text"></input><br>
-                <span>font-weight:</span><input id="link-fw" placeholder="unset" type="text"></input><br>
-                <span>text-decoration:</span><input id="link-td" placeholder="unset" type="text"></input><br>
+                <span>color:</span><input id="link-color" placeholder="#900" type="text"></input><br>
+                <span>font-weight:</span><input id="link-fw" placeholder="" type="text"></input><br>
+                <span>text-decoration:</span><input id="link-td" placeholder="" type="text"></input><br>
                 <textarea class="custom-input" id="link-custom" placeholder="/* custom css */" type="text"></textarea><br>
                 <input style="font-size: 14px; color: #000;" value="Hover:" type="text"></input><br>
                 <span>color:</span><input id="link-color-h" placeholder="#d3ba50;" type="text"></input><br>
@@ -101,7 +101,7 @@
                 <p>PRODUCT ITEM STYLE</p>
                 <div id="badge-preview" class="badge-preview" bis_skin_checked="1"><span>SALE</span></div><br>
                 <p>SALE BADGE (SG-115):</p>
-                <span>background-color:</span><input id="badge-bg" placeholder="#d3aa80" type="text"></input><br>
+                <span>background-color:</span><input id="badge-bg" placeholder="#900" type="text"></input><br>
                 <span>color:</span><input id="badge-color" placeholder="#fff" type="text"></input><br>
                 <textarea class="custom-input" id="badge-custom" placeholder="/* custom css */" type="text"></textarea><br>
                 <textarea style="font-size: 14px; color: #000;" type="text"></textarea><br>
@@ -131,11 +131,11 @@
                 <br>
                 <input style="font-size: 14px; color: #000;" value="Menu:" type="text"></input><br>
                 <span>background-color:</span><input id="mobmenu-bg" placeholder="#fff" type="text"></input><br>
-                <span>color:</span><input id="mobmenu-color" placeholder="#666" type="text"></input><br>
-                <span>counter bg:</span><input id="mobmenu-counter" placeholder="#666" type="text"></input><br>
+                <span>color:</span><input id="mobmenu-color" placeholder="#333" type="text"></input><br>
+                <span>counter bg:</span><input id="mobmenu-counter" placeholder="#333" type="text"></input><br>
                 <br>
                 <input style="font-size: 14px; color: #000;" value="Active:" type="text"></input><br>
-                <span>background-color:</span><input id="mobmenu-bg-a" placeholder="#d3aa80" type="text"></input><br>
+                <span>background-color:</span><input id="mobmenu-bg-a" placeholder="#900" type="text"></input><br>
                 <span>color:</span><input id="mobmenu-color-a" placeholder="#fff" type="text"></input><br>
                 <span>font-size:</span><input id="mobmenu-fs-a" placeholder="14px" type="text"></input><br>
                 <span>font-weight:</span><input id="mobmenu-fw-a" placeholder="400" type="text"></input><br>
@@ -173,7 +173,7 @@
                         <span>line-height:</span><input id="h2-lh" value="1.2" type="text"></input><br>
                         <textarea class="custom-input" id="h2-custom" placeholder="/* custom css */" type="text"></textarea><br>
                     <h3 id="h3-preview">&lt;h3&gt; Heading three title</h3>
-                        <span>color:</span><input id="h3-color" value="#666" type="text"></input><br>
+                        <span>color:</span><input id="h3-color" value="#333" type="text"></input><br>
                         <span>font-size:</span><input id="h3-fs" value="26px" type="text"></input><br>
                         <span>font-weight:</span><input id="h3-fw" value="400" type="text"></input><br>
                         <span>font-family:</span><input id="h3-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
@@ -213,7 +213,7 @@
                     <div id="banner1-h2">Get Free Shipping</div>
                     <div id="banner1-h4">Purchase  $150 worth of products and we'll ship your order for free.</div>
                 </div><br>
-                    <span>background-color:</span><input id="banner1-bg" placeholder="#d3aa80" type="text"></input><br>
+                    <span>background-color:</span><input id="banner1-bg" placeholder="#900" type="text"></input><br>
                     <span>color:</span><input id="banner1-color" placeholder="#fff" type="text"></input><br>
                     <span>title font-size:</span><input id="banner1-fs-h2" placeholder="22px" type="text"></input><br>
                     <span>description font-size:</span><input id="banner1-fs-h4" placeholder="14px" type="text"></input><br>
@@ -224,7 +224,7 @@
                     <div id="banner2-h2">Trying to use a Coupon Code, receive a Membership discount <br>or earn Reward Points?</div>
                     <div id="banner2-h4">Remember to <span id="banner-link">login to your account</span>. Please contact our office for assistance.</div>
                 </div><br>
-                    <span>background-color:</span><input id="banner2-bg" placeholder="#666" type="text"></input><br>
+                    <span>background-color:</span><input id="banner2-bg" placeholder="#333" type="text"></input><br>
                     <span>color:</span><input id="banner2-color" placeholder="#fff" type="text"></input><br>
                     <span>title font-size:</span><input id="banner2-fs-h2" placeholder="22px" type="text"></input><br>
                     <span>description font-size:</span><input id="banner2-fs-h4" placeholder="14px" type="text"></input><br>
@@ -239,10 +239,10 @@
                     <span id="tab2" class="tab2">This month&apos;s specials</span>
                     <span id="tab3" class="tab3">Staff Favorites</span>
                 </div><br/>
-                <span>background-color:</span><input id="tabs-bg" placeholder="#d3aa80" type="text"></input><br>
+                <span>background-color:</span><input id="tabs-bg" placeholder="#900" type="text"></input><br>
                 <span>color:</span><input id="tabs-color" placeholder="#fff" type="text"></input><br><br>
                 <input style="font-size: 14px; color: #000;" value="Hover/Active:" type="text"></input><br>
-                <span>background-color:</span><input id="tabs-bg-h" placeholder="#666" type="text"></input><br>
+                <span>background-color:</span><input id="tabs-bg-h" placeholder="#333" type="text"></input><br>
                 <span>color:</span><input id="tabs-color-h" placeholder="#fff" type="text"></input>
             </div><br>
             <div class="banner item">
@@ -262,7 +262,7 @@
                 <p class="promo-class">p class ="categoryPromo"</p>
                 <span>padding:</span><input id="catpromo-padding" placeholder="10px" type="text"></input><br>
                 <span>background-color:</span><input id="catpromo-bg" placeholder="#f5f5f5" type="text"></input><br>
-                <span>color:</span><input id="catpromo-color" placeholder="#d3aa80" type="text"></input><br>
+                <span>color:</span><input id="catpromo-color" placeholder="#900" type="text"></input><br>
                 <span>font-size:</span><input id="catpromo-fs" placeholder="18px" type="text"></input><br>
                 <span>font-weight:</span><input id="catpromo-fw" placeholder="700" type="text"></input><br>
                 <span>font-family:</span><input id="catpromo-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
@@ -274,7 +274,7 @@
                 <p class="promo-class">p class ="skuPromo"</p>
                 <span>padding:</span><input id="skupromo-padding" placeholder="10px" type="text"></input><br>
                 <span>background-color:</span><input id="skupromo-bg" placeholder="#f5f5f5" type="text"></input><br>
-                <span>color:</span><input id="skupromo-color" placeholder="#d3aa80" type="text"></input><br>
+                <span>color:</span><input id="skupromo-color" placeholder="#900" type="text"></input><br>
                 <span>font-size:</span><input id="skupromo-fs" placeholder="16px" type="text"></input><br>
                 <span>font-weight:</span><input id="skupromo-fw" placeholder="400" type="text"></input><br>
                 <span>font-family:</span><input id="skupromo-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
@@ -301,7 +301,7 @@
                 <br>
 
                 <p>TAG LINE (SG-116):</p>
-                <span>parrent bg:</span><input id="tagline-bg" placeholder="#666" type="text"></input><br>
+                <span>parrent bg:</span><input id="tagline-bg" placeholder="#333" type="text"></input><br>
                 <span>color:</span><input id="tagline-color" placeholder="#fff" type="text"></input><br>
                 <span>font-size:</span><input id="tagline-fs" value="32px" type="text"></input><br>
                 <span>font-weight:</span><input id="tagline-fw" value="400" type="text"></input><br>
@@ -309,7 +309,7 @@
                 <textarea class="custom-input" id="tagline-custom" placeholder="/* custom css */" type="text"></textarea><br>
 
                 <p>PRIMARY CONTAINER:</p>
-                <span>background-color:</span><input id="footer-bg" placeholder="#666" type="text"></input><br>
+                <span>background-color:</span><input id="footer-bg" placeholder="#333" type="text"></input><br>
                 <span>color:</span><input id="footer-color" placeholder="#fff" type="text"></input><br>
                 <span>link color:</span><input id="footer-link-color" placeholder="#fff" type="text"></input><br>
                 <textarea class="custom-input" id="footer-custom" placeholder="/* custom css */" type="text"></textarea><br>
@@ -320,21 +320,21 @@
 
                 <p>SOCIAL ICONS &lpar;SG-105&rpar;:</p>
                 <div style="display: none;"><span >parrent bg &lpar;not required&rpar;:</span><input id="social-bg-p" placeholder="#fff" type="text"></input><br></div>
-                <span>background-color:</span><input id="social-bg" placeholder="#666" type="text"></input><br>
+                <span>background-color:</span><input id="social-bg" placeholder="#333" type="text"></input><br>
                 <span>color:</span><input id="social-color" placeholder="#fff" type="text"></input><br>
                 <span>border:</span><input id="social-border" placeholder="0px solid #fff" type="text"></input><br>
                 <textarea class="custom-input" id="social-custom" placeholder="/* custom css */" type="text"></textarea><br>
                 <input style="font-size: 14px; color: #000;" value="Hover:" type="text"></input><br>
-                <span>background-color:</span><input id="social-bg-h" placeholder="#d3aa80" type="text"></input><br>
+                <span>background-color:</span><input id="social-bg-h" placeholder="#900" type="text"></input><br>
                 <span>color:</span><input id="social-color-h" placeholder="#fff" type="text"></input><br>
 
                 <p>FOOTER BUTTON:</p>
-                <span>background-color:</span><input id="footer-button-bg" placeholder="#666" type="text"></input><br>
-                <span>color:</span><input id="footer-button-color" placeholder="#666" type="text"></input><br>
+                <span>background-color:</span><input id="footer-button-bg" placeholder="#333" type="text"></input><br>
+                <span>color:</span><input id="footer-button-color" placeholder="#333" type="text"></input><br>
                 <textarea class="custom-input" id="footer-button-custom" placeholder="/* custom css */" type="text"></textarea><br>
                 <input style="font-size: 14px; color: #000;" value="Hover:" type="text"></input><br>
-                <span>background-color:</span><input id="footer-button-bg-h" placeholder="#666" type="text"></input><br>
-                <span>color:</span><input id="footer-button-color-h" placeholder="#666" type="text"></input><br>
+                <span>background-color:</span><input id="footer-button-bg-h" placeholder="#333" type="text"></input><br>
+                <span>color:</span><input id="footer-button-color-h" placeholder="#333" type="text"></input><br>
                 <textarea style="font-size: 14px; color: #000;" type="text"></textarea><br>
 
                 <p>BOTTOM CONTAINER:</p>
@@ -365,7 +365,7 @@
                 <input style="font-size: 14px; color: #000;" value="MENU:" type="text"></input><br>
                 <span>parrent bg-color &lpar;not required&rpar;:</span><input id="menu-bg" placeholder="#fff" type="text"></input><br>
                 <textarea class="custom-input" id="menu-custom-p" placeholder="/* parrent custom css" type="text"></textarea><br>
-                <span>color:</span><input id="menu-color" placeholder="#666" type="text"></input><br>
+                <span>color:</span><input id="menu-color" placeholder="#333" type="text"></input><br>
                 <span>font-size:</span><input id="menu-fs" placeholder="16px" type="text"></input><br>
                 <span>font-weight:</span><input id="menu-fw" placeholder="400" type="text"></input><br>
                 <span>font-family:</span><input id="menu-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
@@ -373,14 +373,14 @@
                 <textarea class="custom-input" id="menu-custom" placeholder="/* custom css */" type="text"></textarea><br>
                 <input style="font-size: 14px; color: #000;" value="Active:" type="text"></input><br>
                 <span>background-color:</span><input id="menu-bg-h" placeholder="transparent" type="text"></input><br>
-                <span>color:</span><input id="menu-color-h" placeholder="#666" type="text"></input><br>
-                <span>text-decoration:</span><input id="menu-td-h" placeholder="unset" type="text"></input><br>
+                <span>color:</span><input id="menu-color-h" placeholder="#333" type="text"></input><br>
+                <span>text-decoration:</span><input id="menu-td-h" placeholder="" type="text"></input><br>
                 <textarea class="custom-input" id="menu-custom-h" placeholder="/* custom css */" type="text"></textarea><br>
                 <textarea style="font-size: 14px; color: #000;" type="text"></textarea><br>
                 <input style="font-size: 14px; color: #000;" value="SUB-MENU:" type="text"></input><br>
                 <span>background-color:</span><input id="submenu-bg" placeholder="#fff" type="text"></input><br>
                 <textarea class="custom-input" id="submenu-custom-p" placeholder="/* parrent custom css" type="text"></textarea><br>
-                <span>color:</span><input id="submenu-color" placeholder="#666" type="text"></input><br>
+                <span>color:</span><input id="submenu-color" placeholder="#333" type="text"></input><br>
                 <span>font-size:</span><input id="submenu-fs" placeholder="14px" type="text"></input><br>
                 <span>font-weight:</span><input id="submenu-fw" placeholder="400" type="text"></input><br>
                 <span>font-family:</span><input id="submenu-ff" value='"Open Sans", Helvetica, sans-serif' type="text"></input><br>
@@ -388,9 +388,9 @@
                 <textarea class="custom-input" id="submenu-custom" placeholder="/* custom css */" type="text"></textarea><br>
 
                 <input style="font-size: 14px; color: #000;" value="Active:" type="text"></input><br>
-                <span>background-color:</span><input id="submenu-bg-h" placeholder="#d3aa80" type="text"></input><br>
-                <span>color:</span><input id="submenu-color-h" placeholder="#666" type="text"></input><br>
-                <span>text-decoration:</span><input id="submenu-td-h" placeholder="unset" type="text"></input><br>
+                <span>background-color:</span><input id="submenu-bg-h" placeholder="#900" type="text"></input><br>
+                <span>color:</span><input id="submenu-color-h" placeholder="#333" type="text"></input><br>
+                <span>text-decoration:</span><input id="submenu-td-h" placeholder="" type="text"></input><br>
                 <textarea class="custom-input" id="submenu-custom-h" placeholder="/* custom css */" type="text"></textarea><br>
                 <textarea style="font-size: 14px; color: #000;" type="text"></textarea><br>
                 
@@ -406,10 +406,10 @@
 
     <script src="./files/script.js"></script>
     <script src="./files/ui.js"></script>
-    <!-- <script src="./files/_variables.js"></script> -->
     <script src="./files/_variables_SCG.js"></script>
     <script src="./files/_variables_UMG.js"></script>
     <script src="./files/_typography.js"></script>
-    <script src="./files/_text.js"></script>
+    <!-- <script src="./files/_variables.js"></script> -->
+    <!-- <script src="./files/_text.js"></script> -->
 </body>
 </html>

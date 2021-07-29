@@ -27,7 +27,7 @@
 .hiden, .hiden::placeholder { color: transparent; }
 
 p { font-size: 13px; margin: 10px 0; }
-.logo img { max-height: 100px; }
+.logo img { max-height: 120px; }
 #logo-btn { color: #fff; }
 section > .item { padding: 10px 10px 0 70px; position: relative; }
 
