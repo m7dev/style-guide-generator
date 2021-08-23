@@ -47,7 +47,7 @@ let initialConfig = {
     h: {
         id: ["h1-preview", "h2-preview", "h3-preview", "h4-preview", "h5-preview"],
         color: { e1:"#000", e2:"#000", e3:"#333", e4:"#000", e5:"#000" },
-        fs: { e1:"32px", e2:"30px", e3:"26px", e4:"20px", e5:"16px" },
+        fs: { e1:"32px", e2:"30px", e3:"26px", e4:"20px", e5:"18px" },
         fw: { e1:"400", e2:"400", e3:"400", e4:"400", e5:"400" },
         ff: { e1:'"Open Sans", Helvetica, sans-serif', e2:'"Open Sans", Helvetica, sans-serif', e3:'"Open Sans", Helvetica, sans-serif', e4:'"Open Sans", Helvetica, sans-serif', e5:'"Open Sans", Helvetica, sans-serif' },
         tt: { e1:"capitalize", e2:"capitalize", e3:"uppercase", e4:"capitalize", e5:"capitalize" },
@@ -110,7 +110,7 @@ let initialConfig = {
         bg: "#f5f5f5",
         color: "#ddd",
         fs: "16px",
-        fw: "500",
+        fw: "600",
         ff: '"Open Sans", Helvetica, sans-serif',
         custom: ""
     },
