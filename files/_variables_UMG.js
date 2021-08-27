@@ -352,7 +352,7 @@ function generateVariablesUMG() {
   @mobile-submenu-item-border-hover: @mobile-submenu-item-border;
   @mobile-submenu-item-border-active: @mobile-submenu-item-border;
   @mobile-submenu-item-border-top: 0 solid transparent;
-  @mobile-content-text-transform: ${config.mobMenu.tta};
+  @mobile-content-txt-transform: ${config.mobMenu.tta};
   @mobile-content-font-size: ${config.mobMenu.fsa};
   @mobile-content-font-family: ${config.mobMenu.ffa};
   @mobile-content-font-weight: ${config.mobMenu.fwa};
