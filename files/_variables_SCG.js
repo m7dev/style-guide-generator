@@ -183,11 +183,11 @@ ${newFonts[2]}
 @sku-promo-font-family: ${config.skuPromo.ff};
 @sku-promo-font-size: ${config.skuPromo.fz};
 @sku-promo-font-weight: ${config.skuPromo.fw};
-@sku-category-background-color: ${config.catPromo.bg};
-@sku-category-txt-color: ${config.catPromo.color};
-@sku-category-font-family: ${config.catPromo.ff};
-@sku-category-font-size: ${config.catPromo.fz};
-@sku-category-font-weight: ${config.catPromo.fw};
+@category-promo-background-color: ${config.catPromo.bg};
+@category-promo-txt-color: ${config.catPromo.color};
+@category-promo-font-family: ${config.catPromo.ff};
+@category-promo-font-size: ${config.catPromo.fz};
+@category-promo-font-weight: ${config.catPromo.fw};
 
 //Interface icons /category view toolbar icons, pagination/
 @custom-icon-bg-color: @custom-primary-color;
