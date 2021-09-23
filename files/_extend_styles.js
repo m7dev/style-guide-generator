@@ -29,7 +29,7 @@ var text = `\
   }
 }
 //Fix overlap product page --More from this brand--
-#related\.brand\.product\.tab li.item.product.product-item {
+#related\\.brand\\.product\\.tab li.item.product.product-item {
   height: 432px !important;
   padding-bottom: 74px !important;
 }
@@ -104,7 +104,6 @@ var text = `\
     }
   }
 }
-
 `;
 //SAVE LESS
   download(text, '_extend_styles.less', 'text/css');

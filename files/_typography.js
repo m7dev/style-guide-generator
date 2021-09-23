@@ -226,7 +226,7 @@ p {
   font-family: @custom-primary-font-family;
   font-size: ${config.p.fs};
   color: ${config.p.color};
-  font-weight: ${config.p.fw};
+  font-weight: 400;
   line-height: ${config.p.lh};
 }
 
@@ -364,7 +364,6 @@ ul.bullet {
     }
   }
 }
-
 `;
 //SAVE LESS
   download(text, '_typography.less', 'text/css');

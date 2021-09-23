@@ -181,12 +181,12 @@ ${newFonts[2]}
 @sku-promo-background-color: ${config.skuPromo.bg};
 @sku-promo-txt-color: ${config.skuPromo.color};
 @sku-promo-font-family: ${config.skuPromo.ff};
-@sku-promo-font-size: ${config.skuPromo.fz};
+@sku-promo-font-size: ${config.skuPromo.fs};
 @sku-promo-font-weight: ${config.skuPromo.fw};
 @category-promo-background-color: ${config.catPromo.bg};
 @category-promo-txt-color: ${config.catPromo.color};
 @category-promo-font-family: ${config.catPromo.ff};
-@category-promo-font-size: ${config.catPromo.fz};
+@category-promo-font-size: ${config.catPromo.fs};
 @category-promo-font-weight: ${config.catPromo.fw};
 
 //Interface icons /category view toolbar icons, pagination/
@@ -253,7 +253,7 @@ ${newFonts[2]}
 @heading-h1-color: ${config.h.color.e1};
 @heading-h1-font-size: ${config.h.fs.e1};
 @heading-h1-font-weight: ${config.h.fw.e1};
-@heading-h1-font-family: ${config.h.ff.e1};
+@heading-h1-font-family: @custom-headings-font-family;
 @heading-h1-text-transform: ${config.h.tt.e1};
 @heading-h1-line-height: 1.8;
 
@@ -261,7 +261,7 @@ ${newFonts[2]}
 @heading-h2-color: ${config.h.color.e2};
 @heading-h2-font-size: ${config.h.fs.e2};
 @heading-h2-font-weight: ${config.h.fw.e2};
-@heading-h2-font-family: ${config.h.ff.e2};
+@heading-h2-font-family: @custom-headings-font-family;
 @heading-h2-text-transform: ${config.h.tt.e2};
 @heading-h2-line-height: 1.8;
 
@@ -269,7 +269,7 @@ ${newFonts[2]}
 @heading-h3-color: ${config.h.color.e3};
 @heading-h3-font-size: ${config.h.fs.e3};
 @heading-h3-font-weight: ${config.h.fw.e3};
-@heading-h3-font-family: ${config.h.ff.e3};
+@heading-h3-font-family: @custom-headings-font-family;
 @heading-h3-text-transform: ${config.h.tt.e3};
 @heading-h3-line-height: 1.8;
 
@@ -277,7 +277,7 @@ ${newFonts[2]}
 @heading-h4-color: ${config.h.color.e4};
 @heading-h4-font-size: ${config.h.fs.e4};
 @heading-h4-font-weight: ${config.h.fw.e4};
-@heading-h4-font-family: ${config.h.ff.e4};
+@heading-h4-font-family: @custom-headings-font-family;
 @heading-h4-text-transform: ${config.h.tt.e4};
 @heading-h4-line-height: 1.8;
 
@@ -285,7 +285,7 @@ ${newFonts[2]}
 @heading-h5-color: ${config.h.color.e5};
 @heading-h5-font-size: ${config.h.fs.e5};
 @heading-h5-font-weight: ${config.h.fw.e5};
-@heading-h5-font-family: ${config.h.ff.e5};
+@heading-h5-font-family: @custom-headings-font-family;
 @heading-h5-text-transform: ${config.h.tt.e5};
 @heading-h5-line-height: 1.8;
 
